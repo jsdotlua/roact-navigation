@@ -1,21 +1,34 @@
 {
-  "name": "RoactNavigation",
+  "name": "test-place",
   "tree": {
     "$className": "DataModel",
-
     "ReplicatedStorage": {
-      "$className": "ReplicatedStorage",
-
-      "Packages": {
-        "$path": "Packages",
-
-        "RoactNavigation": {
-          "$path": "src"
-        },
-
-        "RoactNavigationStorybook": {
-          "$path": "Storybook"
-        }
+      "node_modules": {
+        "$path": "./node_modules"
+      },
+      "TestTarget": {
+        "$path": "./src"
+      },
+      "RoactNavigationStorybook": {
+        "$path": "Storybook"
+      }
+    },
+    "ServerScriptService": {
+      "RunTests": {
+        "$path": "./scripts/roblox-test.server.lua"
+      },
+      "TestsSetup": {
+        "$path": "./tests"
+      }
+    },
+    "HttpService": {
+      "$properties": {
+        "HttpEnabled": true
+      }
+    },
+    "Players": {
+      "$properties": {
+        "CharacterAutoLoads": false
       }
     }
   }

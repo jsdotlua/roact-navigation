@@ -1,4 +1,4 @@
-std = "roblox+testez"
+std = "selene_defs+roblox"
 
 [config]
 empty_if = { comments_count = true }

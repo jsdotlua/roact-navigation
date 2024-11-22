@@ -1,0 +1,47 @@
+{
+  "name": "@jsdotlua/roact-navigation",
+  "version": "0.5.10",
+  "description": "Declarative navigation system built for React",
+  "license": "MIT",
+  "author": "Satyajit Sahoo <satyajit.happy@gmail.com> (https://github.com/satya164/), Michał Osadnik <micosa97@gmail.com> (https://github.com/osdnk/)",
+  "contributors": [
+    "jeparlefrancais <jeparlefrancais21@gmail.com>"
+  ],
+  "homepage": "https://github.com/jsdotlua/roact-navigation#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsdotlua/roact-navigation.git"
+  },
+  "main": "src/init.lua",
+  "keywords": [
+    "luau",
+    "roblox",
+    "react",
+    "navigation"
+  ],
+  "scripts": {
+    "build": "sh ./scripts/build.sh",
+    "clean": "rm -rf node_modules build temp",
+    "format": "stylua .",
+    "lint": "sh ./scripts/analyze.sh && selene src",
+    "lint:luau": "sh ./scripts/analyze.sh",
+    "lint:selene": "selene src",
+    "prepare": "npmluau",
+    "style-check": "stylua . --check",
+    "test:roblox": "sh ./scripts/roblox-test.sh",
+    "verify-pack": "yarn pack --dry-run"
+  },
+  "dependencies": {
+    "@jsdotlua/luau-polyfill": "^1.2.7",
+    "@jsdotlua/otter": "^1.2.1",
+    "@jsdotlua/react": "^17.1.0",
+    "@jsdotlua/react-roblox": "^17.1.0",
+    "luau-regexp": "^0.2.1"
+  },
+  "devDependencies": {
+    "@jsdotlua/jest": "^3.6.1-rc.2",
+    "@jsdotlua/jest-globals": "^3.6.1-rc.2",
+    "npmluau": "^0.1.1"
+  },
+  "packageManager": "yarn@4.5.2"
+}
