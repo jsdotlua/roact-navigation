@@ -1,9 +1,7 @@
 -- upstream https://github.com/react-navigation/react-navigation/blob/1f5000e86bef5e4c8ee6fbeb25e3ca3eb8873ad0/packages/core/src/views/SwitchView/SwitchView.js
 
-local root = script.Parent.Parent.Parent
-local Packages = root.Parent
-local React = require(Packages.React)
-local SceneView = require(script.Parent.Parent.SceneView)
+local React = require("@pkg/@jsdotlua/react")
+local SceneView = require("../SceneView")
 
 local function SwitchView(props)
 	local state = props.navigation.state

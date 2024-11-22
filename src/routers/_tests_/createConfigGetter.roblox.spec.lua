@@ -1,10 +1,7 @@
 return function()
-	local routersModule = script.Parent.Parent
-	local RoactNavigationModule = routersModule.Parent
-	local Packages = RoactNavigationModule.Parent
-	local jestExpect = require(Packages.Dev.JestGlobals).expect
+	local jestExpect = require("@pkg/@jsdotlua/jest-globals").expect
 
-	local createConfigGetter = require(routersModule.createConfigGetter)
+	local createConfigGetter = require("../createConfigGetter")
 
 	it("should return a function", function()
 		local result = createConfigGetter({}, {})

@@ -1,5 +1,5 @@
 return function()
-	local TableUtilities = require(script.Parent.Parent.TableUtilities)
+	local TableUtilities = require("../TableUtilities")
 
 	describe("DeepEqual", function()
 		it("should succeed", function()

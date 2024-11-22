@@ -1,7 +1,7 @@
 return function()
 	local RoactNavigationModule = script.Parent.Parent
 	local Packages = RoactNavigationModule.Parent
-	local jestExpect = require(Packages.Dev.JestGlobals).expect
+	local jestExpect = require("@pkg/@jsdotlua/jest-globals").expect
 
 	for _, storyModule in ipairs(Packages.RoactNavigationStorybook:GetDescendants()) do
 		local storyName = storyModule.Name:match("(.+)%.story$")

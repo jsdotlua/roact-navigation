@@ -1,15 +1,12 @@
 -- upstream https://github.com/react-navigation/react-navigation/blob/72e8160537954af40f1b070aa91ef45fc02bba69/packages/core/src/routers/__tests__/TabRouter.test.js
 
 return function()
-	local routersModule = script.Parent.Parent
-	local RoactNavigationModule = routersModule.Parent
-	local Packages = RoactNavigationModule.Parent
-	local React = require(Packages.React)
-	local jestExpect = require(Packages.Dev.JestGlobals).expect
+	local React = require("@pkg/@jsdotlua/react")
+	local jestExpect = require("@pkg/@jsdotlua/jest-globals").expect
 
-	local BackBehavior = require(RoactNavigationModule.BackBehavior)
-	local NavigationActions = require(RoactNavigationModule.NavigationActions)
-	local TabRouter = require(routersModule.TabRouter)
+	local BackBehavior = require("../../BackBehavior")
+	local NavigationActions = require("../../NavigationActions")
+	local TabRouter = require("../TabRouter")
 
 	local BareLeafRouteConfig = {
 		screen = function()

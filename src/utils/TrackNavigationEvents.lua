@@ -1,14 +1,12 @@
-local root = script.Parent.Parent
-local Packages = root.Parent
-local LuauPolyfill = require(Packages.LuauPolyfill)
+local LuauPolyfill = require("@pkg/@jsdotlua/luau-polyfill")
 local Array = LuauPolyfill.Array
 
-local React = require(Packages.React)
-local ReactRoblox = require(Packages.Dev.ReactRoblox)
-local NavigationEvents = require(root.views.NavigationEvents)
-local Events = require(root.Events)
-local invariant = require(script.Parent.invariant)
-local PageNavigationEvent = require(script.Parent.PageNavigationEvent)
+local React = require("@pkg/@jsdotlua/react")
+local ReactRoblox = require("@pkg/@jsdotlua/react-roblox")
+local NavigationEvents = require("../views/NavigationEvents")
+local Events = require("../Events")
+local invariant = require("./invariant")
+local PageNavigationEvent = require("./PageNavigationEvent")
 
 local TrackNavigationEvents = {}
 TrackNavigationEvents.__index = TrackNavigationEvents

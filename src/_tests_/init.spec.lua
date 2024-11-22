@@ -1,11 +1,9 @@
 return function()
-	local RoactNavigationModule = script.Parent.Parent
-	local RoactNavigation = require(RoactNavigationModule)
-	local StackPresentationStyle = require(RoactNavigationModule.views.RobloxStackView.StackPresentationStyle)
-	local Packages = RoactNavigationModule.Parent
-	local React = require(Packages.React)
-	local ReactRoblox = require(Packages.Dev.ReactRoblox)
-	local expect = require(Packages.Dev.JestGlobals).expect
+	local RoactNavigation = require("..")
+	local StackPresentationStyle = require("../views/RobloxStackView/StackPresentationStyle")
+	local React = require("@pkg/@jsdotlua/react")
+	local ReactRoblox = require("@pkg/@jsdotlua/react-roblox")
+	local expect = require("@pkg/@jsdotlua/jest-globals").expect
 
 	it("should return a function for createAppContainer", function()
 		expect(RoactNavigation.createAppContainer).toEqual(expect.any("function"))

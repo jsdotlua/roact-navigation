@@ -1,11 +1,8 @@
 return function()
-	local views = script.Parent.Parent
-	local Packages = views.Parent.Parent
-
-	local SceneView = require(views.SceneView)
-	local React = require(Packages.React)
-	local ReactRoblox = require(Packages.Dev.ReactRoblox)
-	local JestGlobals = require(Packages.Dev.JestGlobals)
+	local SceneView = require("../SceneView")
+	local React = require("@pkg/@jsdotlua/react")
+	local ReactRoblox = require("@pkg/@jsdotlua/react-roblox")
+	local JestGlobals = require("@pkg/@jsdotlua/jest-globals")
 	local expect = JestGlobals.expect
 
 	it("should mount inner component and pass down required props+context.navigation", function()

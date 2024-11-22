@@ -1,14 +1,10 @@
 return function()
-	local utils = script.Parent.Parent
-	local root = utils.Parent
-	local Packages = root.Parent
-
-	local RoactNavigation = require(root)
-	local JestGlobals = require(Packages.Dev.JestGlobals)
+	local RoactNavigation = require("../..")
+	local JestGlobals = require("@pkg/@jsdotlua/jest-globals")
 
 	local expect = JestGlobals.expect
 
-	local PageNavigationEvent = require(utils.PageNavigationEvent)
+	local PageNavigationEvent = require("../PageNavigationEvent")
 
 	local testPage = "TEST PAGE"
 	local willFocusEvent = RoactNavigation.Events.WillFocus

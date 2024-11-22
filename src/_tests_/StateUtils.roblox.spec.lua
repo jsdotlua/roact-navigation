@@ -1,9 +1,7 @@
 return function()
-	local RoactNavigationModule = script.Parent.Parent
-	local Packages = RoactNavigationModule.Parent
-	local jestExpect = require(Packages.Dev.JestGlobals).expect
+	local jestExpect = require("@pkg/@jsdotlua/jest-globals").expect
 
-	local StateUtils = require(RoactNavigationModule.StateUtils)
+	local StateUtils = require("../StateUtils")
 
 	describe("StateUtils.get tests", function()
 		it("should assert if state is not a table", function()

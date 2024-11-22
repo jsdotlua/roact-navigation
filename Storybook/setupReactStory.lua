@@ -1,7 +1,4 @@
-local Storybook = script.Parent
-local Packages = Storybook.Parent
-
-local ReactRoblox = require(Packages.Dev.ReactRoblox)
+local ReactRoblox = require("@pkg/@jsdotlua/react-roblox")
 
 local function act(callback)
 	callback()

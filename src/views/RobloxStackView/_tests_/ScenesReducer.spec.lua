@@ -1,11 +1,7 @@
 return function()
-	local RobloxStackViewModule = script.Parent.Parent
-	local viewsModule = RobloxStackViewModule.Parent
-	local RoactNavigationModule = viewsModule.Parent
-	local Packages = RoactNavigationModule.Parent
-	local jestExpect = require(Packages.Dev.JestGlobals).expect
+	local jestExpect = require("@pkg/@jsdotlua/jest-globals").expect
 
-	local ScenesReducer = require(RobloxStackViewModule.ScenesReducer)
+	local ScenesReducer = require("../ScenesReducer")
 
 	local initialRouteKey = "id-1"
 	local initialRouteName = "First Route"

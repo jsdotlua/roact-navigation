@@ -1,10 +1,8 @@
 -- upstream https://github.com/react-navigation/react-navigation/blob/f10543f9fcc0f347c9d23aeb57616fd0f21cd4e3/packages/core/src/__tests__/getEventManager.test.js
 return function()
-	local RoactNavigationModule = script.Parent.Parent
-	local getEventManager = require(RoactNavigationModule.getEventManager)
-	local Events = require(RoactNavigationModule.Events)
-	local Packages = RoactNavigationModule.Parent
-	local JestGlobals = require(Packages.Dev.JestGlobals)
+	local getEventManager = require("../getEventManager")
+	local Events = require("../Events")
+	local JestGlobals = require("@pkg/@jsdotlua/jest-globals")
 	local expect = JestGlobals.expect
 	local jest = JestGlobals.jest
 

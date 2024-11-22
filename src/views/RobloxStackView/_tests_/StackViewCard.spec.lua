@@ -1,15 +1,10 @@
 return function()
-	local RobloxStackViewModule = script.Parent.Parent
-	local viewsModule = RobloxStackViewModule.Parent
-	local RoactNavigationModule = viewsModule.Parent
-	local Packages = RoactNavigationModule.Parent
-
-	local Otter = require(Packages.Otter)
-	local React = require(Packages.React)
-	local ReactRoblox = require(Packages.Dev.ReactRoblox)
-	local JestGlobals = require(Packages.Dev.JestGlobals)
+	local Otter = require("@pkg/@jsdotlua/otter")
+	local React = require("@pkg/@jsdotlua/react")
+	local ReactRoblox = require("@pkg/@jsdotlua/react-roblox")
+	local JestGlobals = require("@pkg/@jsdotlua/jest-globals")
 	local expect = JestGlobals.expect
-	local StackViewCard = require(RobloxStackViewModule.StackViewCard)
+	local StackViewCard = require("../StackViewCard")
 
 	it("should mount its renderProp and pass it scene", function()
 		local didRender = false

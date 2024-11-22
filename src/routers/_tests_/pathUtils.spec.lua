@@ -1,9 +1,6 @@
 return function()
-	local routersModule = script.Parent.Parent
-	local RoactNavigationModule = routersModule.Parent
-	local pathUtils = require(routersModule.pathUtils)
-	local Packages = RoactNavigationModule.Parent
-	local jestExpect = require(Packages.Dev.JestGlobals).expect
+	local pathUtils = require("../pathUtils")
+	local jestExpect = require("@pkg/@jsdotlua/jest-globals").expect
 	local urlToPathAndParams = pathUtils.urlToPathAndParams
 
 	it("urlToPathAndParams empty", function()

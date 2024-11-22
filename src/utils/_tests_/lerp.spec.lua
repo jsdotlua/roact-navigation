@@ -1,5 +1,5 @@
 return function()
-	local lerp = require(script.Parent.Parent.lerp)
+	local lerp = require("../lerp")
 
 	it("should return bottom of range for bottom input", function()
 		expect(lerp(0, 1, 0)).to.equal(0)

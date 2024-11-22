@@ -1,17 +1,12 @@
 return function()
-	local navigatorsModule = script.Parent.Parent
-	local RoactNavigationModule = navigatorsModule.Parent
-	local routersModule = RoactNavigationModule.routers
-	local viewsModule = RoactNavigationModule.views
-	local Packages = RoactNavigationModule.Parent
-	local jestExpect = require(Packages.Dev.JestGlobals).expect
-	local React = require(Packages.React)
-	local ReactRoblox = require(Packages.Dev.ReactRoblox)
+	local jestExpect = require("@pkg/@jsdotlua/jest-globals").expect
+	local React = require("@pkg/@jsdotlua/react")
+	local ReactRoblox = require("@pkg/@jsdotlua/react-roblox")
 
-	local createNavigator = require(navigatorsModule.createNavigator)
-	local createAppContainer = require(RoactNavigationModule.createAppContainer).createAppContainer
-	local StackRouter = require(routersModule.StackRouter)
-	local StackView = require(viewsModule.RobloxStackView.StackView)
+	local createNavigator = require("../createNavigator")
+	local createAppContainer = require("../../createAppContainer").createAppContainer
+	local StackRouter = require("../../routers/StackRouter")
+	local StackView = require("../../views/RobloxStackView/StackView")
 
 	local testRouter = {
 		getScreenOptions = function()

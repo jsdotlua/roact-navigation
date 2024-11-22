@@ -1,21 +1,18 @@
 -- upstream: https://github.com/react-navigation/react-navigation/blob/a57e47786c5654a3803582b2c4953547164f26a0/packages/core/src/routers/__tests__/Routers.test.js
 
 return function()
-	local routersModule = script.Parent.Parent
-	local RoactNavigationModule = routersModule.Parent
-	local Packages = RoactNavigationModule.Parent
-	local LuauPolyfill = require(Packages.LuauPolyfill)
+	local LuauPolyfill = require("@pkg/@jsdotlua/luau-polyfill")
 	local Array = LuauPolyfill.Array
 	local Object = LuauPolyfill.Object
-	local React = require(Packages.React)
-	local jestExpect = require(Packages.Dev.JestGlobals).expect
+	local React = require("@pkg/@jsdotlua/react")
+	local jestExpect = require("@pkg/@jsdotlua/jest-globals").expect
 
-	local StackRouter = require(routersModule.StackRouter)
-	local TabRouter = require(routersModule.TabRouter)
-	local SwitchRouter = require(routersModule.SwitchRouter)
-	local NavigationActions = require(RoactNavigationModule.NavigationActions)
-	local StackActions = require(RoactNavigationModule.routers.StackActions)
-	local KeyGenerator = require(RoactNavigationModule.utils.KeyGenerator)
+	local StackRouter = require("../StackRouter")
+	local TabRouter = require("../TabRouter")
+	local SwitchRouter = require("../SwitchRouter")
+	local NavigationActions = require("../../NavigationActions")
+	local StackActions = require("../../routers/StackActions")
+	local KeyGenerator = require("../../utils/KeyGenerator")
 
 	beforeEach(function()
 		KeyGenerator._TESTING_ONLY_normalize_keys()

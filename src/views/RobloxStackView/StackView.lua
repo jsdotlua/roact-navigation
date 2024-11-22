@@ -1,15 +1,11 @@
-local RobloxStackView = script.Parent
-local root = RobloxStackView.Parent.Parent
-local Packages = root.Parent
-
-local LuauPolyfill = require(Packages.LuauPolyfill)
+local LuauPolyfill = require("@pkg/@jsdotlua/luau-polyfill")
 local Object = LuauPolyfill.Object
-local React = require(Packages.React)
-local StackActions = require(root.routers.StackActions)
-local StackViewLayout = require(RobloxStackView.StackViewLayout)
-local Transitioner = require(RobloxStackView.Transitioner)
-local StackViewTransitionConfigs = require(RobloxStackView.StackViewTransitionConfigs)
-local StackPresentationStyle = require(RobloxStackView.StackPresentationStyle)
+local React = require("@pkg/@jsdotlua/react")
+local StackActions = require("../../routers/StackActions")
+local StackViewLayout = require("../RobloxStackView/StackViewLayout")
+local Transitioner = require("../RobloxStackView/Transitioner")
+local StackViewTransitionConfigs = require("../RobloxStackView/StackViewTransitionConfigs")
+local StackPresentationStyle = require("../RobloxStackView/StackPresentationStyle")
 
 local defaultNavigationConfig = {
 	mode = StackPresentationStyle.Default,

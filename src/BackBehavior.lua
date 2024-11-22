@@ -1,4 +1,4 @@
-local NavigationSymbol = require(script.Parent.NavigationSymbol)
+local NavigationSymbol = require("./NavigationSymbol")
 
 local NONE_TOKEN = NavigationSymbol("NONE")
 local INITIAL_ROUTE_TOKEN = NavigationSymbol("INITIAL_ROUTE")

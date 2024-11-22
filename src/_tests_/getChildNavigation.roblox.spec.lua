@@ -1,8 +1,6 @@
 return function()
-	local RoactNavigationModule = script.Parent.Parent
-	local getChildNavigation = require(RoactNavigationModule.getChildNavigation)
-	local Packages = RoactNavigationModule.Parent
-	local jestExpect = require(Packages.Dev.JestGlobals).expect
+	local getChildNavigation = require("../getChildNavigation")
+	local jestExpect = require("@pkg/@jsdotlua/jest-globals").expect
 
 	it("should return nil if there is no route matching requested key", function()
 		local testNavigation = {

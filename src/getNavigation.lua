@@ -1,14 +1,12 @@
 -- upstream https://github.com/react-navigation/react-navigation/blob/72e8160537954af40f1b070aa91ef45fc02bba69/packages/core/src/getNavigation.js
 
-local root = script.Parent
-local Packages = root.Parent
-local LuauPolyfill = require(Packages.LuauPolyfill)
+local LuauPolyfill = require("@pkg/@jsdotlua/luau-polyfill")
 local Object = LuauPolyfill.Object
 
-local Events = require(root.Events)
-local getNavigationActionCreators = require(root.routers.getNavigationActionCreators)
-local getChildNavigation = require(root.getChildNavigation)
-local getChildrenNavigationCache = require(root.getChildrenNavigationCache)
+local Events = require("./Events")
+local getNavigationActionCreators = require("./routers/getNavigationActionCreators")
+local getChildNavigation = require("./getChildNavigation")
+local getChildrenNavigationCache = require("./getChildrenNavigationCache")
 
 return function(router, state, dispatch, actionSubscribers, getScreenProps, getCurrentNavigation)
 	local actions = router.getActionCreators(state, nil)

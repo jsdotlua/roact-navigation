@@ -1,10 +1,7 @@
 return function()
-	local routersModule = script.Parent.Parent
-	local RoactNavigationModule = routersModule.Parent
-	local Packages = RoactNavigationModule.Parent
-	local jestExpect = require(Packages.Dev.JestGlobals).expect
+	local jestExpect = require("@pkg/@jsdotlua/jest-globals").expect
 
-	local validateScreenOptions = require(routersModule.validateScreenOptions)
+	local validateScreenOptions = require("../validateScreenOptions")
 
 	it("should not throw when there are no problems", function()
 		jestExpect(function()

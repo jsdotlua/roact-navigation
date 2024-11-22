@@ -1,5 +1,5 @@
 return function()
-	local StackPresentationStyle = require(script.Parent.Parent.StackPresentationStyle)
+	local StackPresentationStyle = require("../StackPresentationStyle")
 
 	describe("StackPresentationStyle token tests", function()
 		it("should return same object for each token for multiple calls", function()

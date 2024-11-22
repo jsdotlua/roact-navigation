@@ -1,9 +1,6 @@
 return function()
-	local utilsModule = script.Parent.Parent
-	local Packages = utilsModule.Parent.Parent
-
-	local React = require(Packages.React)
-	local isValidScreenComponent = require(utilsModule.isValidScreenComponent)
+	local React = require("@pkg/@jsdotlua/react")
+	local isValidScreenComponent = require("../isValidScreenComponent")
 
 	local TestComponent = React.Component:extend("TestFoo")
 

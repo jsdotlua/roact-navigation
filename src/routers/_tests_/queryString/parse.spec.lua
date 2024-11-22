@@ -1,13 +1,10 @@
 -- upstream: https://github.com/sindresorhus/query-string/blob/v6.11.1/test/parse.js
 return function()
-	local routersModule = script.Parent.Parent.Parent
-	local RoactNavigationModule = routersModule.Parent
-	local Packages = RoactNavigationModule.Parent
-	local jestExpect = require(Packages.Dev.JestGlobals).expect
-	local LuauPolyfill = require(Packages.LuauPolyfill)
+	local jestExpect = require("@pkg/@jsdotlua/jest-globals").expect
+	local LuauPolyfill = require("@pkg/@jsdotlua/luau-polyfill")
 	local Array = LuauPolyfill.Array
 
-	local queryString = require(routersModule.queryString)
+	local queryString = require("../../queryString")
 
 	it("query strings starting with a `?`", function()
 		jestExpect(queryString.parse("?foo=bar")).toEqual({ foo = "bar" })

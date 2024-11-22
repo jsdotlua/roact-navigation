@@ -1,57 +1,57 @@
-local NavigationContext = require(script.views.NavigationContext)
-local LuauPolyfill = require(script.Parent.LuauPolyfill)
+local NavigationContext = require("./views/NavigationContext")
+local LuauPolyfill = require("@pkg/@jsdotlua/luau-polyfill")
 local Object = LuauPolyfill.Object
 
 return {
 	-- Navigation container construction
-	createAppContainer = require(script.createAppContainer).createAppContainer,
-	getNavigation = require(script.getNavigation),
+	createAppContainer = require("./createAppContainer").createAppContainer,
+	getNavigation = require("./getNavigation"),
 
 	-- Context Access
 	Context = NavigationContext,
 	Provider = NavigationContext.Provider,
 	Consumer = NavigationContext.Consumer,
 
-	withNavigation = require(script.views.withNavigation),
-	withNavigationFocus = require(script.views.withNavigationFocus),
+	withNavigation = require("./views/withNavigation"),
+	withNavigationFocus = require("./views/withNavigationFocus"),
 
 	-- Navigators
-	createRobloxStackNavigator = require(script.navigators.createRobloxStackNavigator),
-	createRobloxSwitchNavigator = require(script.navigators.createRobloxSwitchNavigator),
-	createSwitchNavigator = require(script.navigators.createSwitchNavigator),
-	createNavigator = require(script.navigators.createNavigator),
+	createRobloxStackNavigator = require("./navigators/createRobloxStackNavigator"),
+	createRobloxSwitchNavigator = require("./navigators/createRobloxSwitchNavigator"),
+	createSwitchNavigator = require("./navigators/createSwitchNavigator"),
+	createNavigator = require("./navigators/createNavigator"),
 
 	-- Routers
-	StackRouter = require(script.routers.StackRouter),
-	SwitchRouter = require(script.routers.SwitchRouter),
-	TabRouter = require(script.routers.TabRouter),
-	DontMatchEmptyPath = require(script.routers:FindFirstChild("NullPathSymbol.roblox")),
+	StackRouter = require("./routers/StackRouter"),
+	SwitchRouter = require("./routers/SwitchRouter"),
+	TabRouter = require("./routers/TabRouter"),
+	DontMatchEmptyPath = require("./routers/NullPathSymbol.roblox.lua"),
 
 	-- Navigation Actions
-	Actions = require(script.NavigationActions),
-	StackActions = require(script.routers.StackActions),
-	SwitchActions = require(script.routers.SwitchActions),
-	BackBehavior = require(script.BackBehavior),
+	Actions = require("./NavigationActions"),
+	StackActions = require("./routers/StackActions"),
+	SwitchActions = require("./routers/SwitchActions"),
+	BackBehavior = require("./BackBehavior"),
 
 	-- Navigation Events
-	Events = require(script.Events),
-	NavigationEvents = require(script.views.NavigationEvents),
+	Events = require("./Events"),
+	NavigationEvents = require("./views/NavigationEvents"),
 
 	-- Util Types
 	None = Object.None,
 
 	-- Additional Types
-	StackPresentationStyle = require(script.views.RobloxStackView.StackPresentationStyle),
-	StackViewTransitionConfigs = require(script.views.RobloxStackView.StackViewTransitionConfigs),
+	StackPresentationStyle = require("./views/RobloxStackView/StackPresentationStyle"),
+	StackViewTransitionConfigs = require("./views/RobloxStackView/StackViewTransitionConfigs"),
 
 	-- Screen Views
-	SceneView = require(script.views.SceneView),
-	RobloxSwitchView = require(script.views.RobloxSwitchView),
-	RobloxStackView = require(script.views.RobloxStackView.StackView),
+	SceneView = require("./views/SceneView"),
+	RobloxSwitchView = require("./views/RobloxSwitchView"),
+	RobloxStackView = require("./views/RobloxStackView/StackView"),
 
 	-- Utilities
-	createConfigGetter = require(script.routers.createConfigGetter),
-	getScreenForRouteName = require(script.routers.getScreenForRouteName),
-	validateRouteConfigMap = require(script.routers.validateRouteConfigMap),
-	getActiveChildNavigationOptions = require(script.utils.getActiveChildNavigationOptions),
+	createConfigGetter = require("./routers/createConfigGetter"),
+	getScreenForRouteName = require("./routers/getScreenForRouteName"),
+	validateRouteConfigMap = require("./routers/validateRouteConfigMap"),
+	getActiveChildNavigationOptions = require("./utils/getActiveChildNavigationOptions"),
 }

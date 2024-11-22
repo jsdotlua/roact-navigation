@@ -1,10 +1,7 @@
-local Storybook = script.Parent.Parent
-local Packages = Storybook.Parent
-
-local setupReactStory = require(Storybook.setupReactStory)
-local React = require(Packages.React)
-local RoactNavigation = require(Packages.RoactNavigation)
-local LuauPolyfill = require(Packages.LuauPolyfill)
+local setupReactStory = require("../setupReactStory")
+local React = require("@pkg/@jsdotlua/react")
+local RoactNavigation = require("../../src")
+local LuauPolyfill = require("@pkg/@jsdotlua/luau-polyfill")
 local Object = LuauPolyfill.Object
 
 --[[

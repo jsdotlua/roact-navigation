@@ -1,7 +1,6 @@
-local root = script.Parent.Parent
-local createNavigator = require(script.Parent.createNavigator)
-local StackRouter = require(root.routers.StackRouter)
-local StackView = require(root.views.RobloxStackView.StackView)
+local createNavigator = require("./createNavigator")
+local StackRouter = require("../routers/StackRouter")
+local StackView = require("../views/RobloxStackView/StackView")
 
 return function(routeArray, stackConfig)
 	local router = StackRouter(routeArray, stackConfig)

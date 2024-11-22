@@ -1,11 +1,8 @@
 -- upstream: https://github.com/SamVerschueren/decode-uri-component/blob/v0.2.0/test.js
 return function()
-	local routersModule = script.Parent.Parent
-	local RoactNavigationModule = routersModule.Parent
-	local Packages = RoactNavigationModule.Parent
-	local jestExpect = require(Packages.Dev.JestGlobals).expect
+	local jestExpect = require("@pkg/@jsdotlua/jest-globals").expect
 
-	local decodeURIComponent = require(routersModule.decodeURIComponent)
+	local decodeURIComponent = require("../decodeURIComponent")
 
 	local tests = {
 		["test"] = "test",

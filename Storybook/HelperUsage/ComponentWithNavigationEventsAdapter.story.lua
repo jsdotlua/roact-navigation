@@ -1,9 +1,6 @@
-local Storybook = script.Parent.Parent
-local Packages = Storybook.Parent
-
-local setupReactStory = require(Storybook.setupReactStory)
-local React = require(Packages.React)
-local RoactNavigation = require(Packages.RoactNavigation)
+local setupReactStory = require("../setupReactStory")
+local React = require("@pkg/@jsdotlua/react")
+local RoactNavigation = require("../../src")
 
 --[[
 	This story demonstrates how to build a screen component that listens

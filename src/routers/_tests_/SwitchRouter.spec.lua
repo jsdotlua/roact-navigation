@@ -1,19 +1,16 @@
 -- upstream https://github.com/react-navigation/react-navigation/blob/fcd7d83c4c33ad1fa508c8cfe687d2fa259bfc2c/packages/core/src/routers/__tests__/SwitchRouter.test.js
 
 return function()
-	local routersModule = script.Parent.Parent
-	local RoactNavigationModule = routersModule.Parent
-	local Packages = RoactNavigationModule.Parent
-	local React = require(Packages.React)
-	local LuauPolyfill = require(Packages.LuauPolyfill)
+	local React = require("@pkg/@jsdotlua/react")
+	local LuauPolyfill = require("@pkg/@jsdotlua/luau-polyfill")
 	local Object = LuauPolyfill.Object
-	local jestExpect = require(Packages.Dev.JestGlobals).expect
+	local jestExpect = require("@pkg/@jsdotlua/jest-globals").expect
 
-	local StackRouter = require(routersModule.StackRouter)
-	local SwitchRouter = require(routersModule.SwitchRouter)
-	local NavigationActions = require(RoactNavigationModule.NavigationActions)
-	local BackBehavior = require(RoactNavigationModule.BackBehavior)
-	local getRouterTestHelper = require(script.Parent.routerTestHelper)
+	local StackRouter = require("../StackRouter")
+	local SwitchRouter = require("../SwitchRouter")
+	local NavigationActions = require("../../NavigationActions")
+	local BackBehavior = require("../../BackBehavior")
+	local getRouterTestHelper = require("./routerTestHelper")
 
 	local function getExampleRouter(config)
 		config = config or {}

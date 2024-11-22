@@ -2,14 +2,11 @@
 return function()
 	local HttpService = game:GetService("HttpService")
 
-	local routers = script.Parent.Parent
-	local root = routers.Parent
-	local Packages = root.Parent
-	local LuauPolyfill = require(Packages.LuauPolyfill)
+	local LuauPolyfill = require("@pkg/@jsdotlua/luau-polyfill")
 	local Array = LuauPolyfill.Array
 	local Object = LuauPolyfill.Object
-	local jestExpect = require(Packages.Dev.JestGlobals).expect
-	local pathToRegexp = require(routers.pathToRegexp)
+	local jestExpect = require("@pkg/@jsdotlua/jest-globals").expect
+	local pathToRegexp = require("../pathToRegexp")
 
 	local undefined = {}
 	local null = {}

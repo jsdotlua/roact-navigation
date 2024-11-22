@@ -1,9 +1,7 @@
 return function()
-	local RoactNavigationModule = script.Parent.Parent
-	local Events = require(RoactNavigationModule.Events)
-	local getNavigation = require(RoactNavigationModule.getNavigation)
-	local Packages = RoactNavigationModule.Parent
-	local jestExpect = require(Packages.Dev.JestGlobals).expect
+	local Events = require("../Events")
+	local getNavigation = require("../getNavigation")
+	local jestExpect = require("@pkg/@jsdotlua/jest-globals").expect
 
 	local function makeTestBundle(testState)
 		testState = testState or {

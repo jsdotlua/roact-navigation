@@ -1,22 +1,19 @@
 -- upstream https://github.com/react-navigation/react-navigation/blob/9b55493e7662f4d54c21f75e53eb3911675f61bc/packages/core/src/views/__tests__/NavigationFocusEvents.test.js
 
 return function()
-	local viewsModule = script.Parent.Parent
-	local RoactNavigationModule = viewsModule.Parent
-	local Packages = RoactNavigationModule.Parent
-	local React = require(Packages.React)
-	local ReactRoblox = require(Packages.Dev.ReactRoblox)
-	local JestGlobals = require(Packages.Dev.JestGlobals)
+	local React = require("@pkg/@jsdotlua/react")
+	local ReactRoblox = require("@pkg/@jsdotlua/react-roblox")
+	local JestGlobals = require("@pkg/@jsdotlua/jest-globals")
 	local expect = JestGlobals.expect
 	local jest = JestGlobals.jest
-	local LuauPolyfill = require(Packages.LuauPolyfill)
+	local LuauPolyfill = require("@pkg/@jsdotlua/luau-polyfill")
 	local Object = LuauPolyfill.Object
 
-	local NavigationFocusEvents = require(viewsModule.NavigationFocusEvents)
-	local getEventManager = require(RoactNavigationModule.getEventManager)
-	local NavigationActions = require(RoactNavigationModule.NavigationActions)
-	local StackActions = require(RoactNavigationModule.routers.StackActions)
-	local Events = require(RoactNavigationModule.Events)
+	local NavigationFocusEvents = require("../NavigationFocusEvents")
+	local getEventManager = require("../../getEventManager")
+	local NavigationActions = require("../../NavigationActions")
+	local StackActions = require("../../routers/StackActions")
+	local Events = require("../../Events")
 
 	local function getNavigationMock(mock)
 		local eventManager = getEventManager("target")

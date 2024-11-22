@@ -1,7 +1,6 @@
 -- upstream https://github.com/react-navigation/react-navigation/blob/6390aacd07fd647d925dfec842a766c8aad5272f/packages/core/src/routers/validateRouteConfigMap.js
-local root = script.Parent.Parent
-local invariant = require(root.utils.invariant)
-local isValidScreenComponent = require(root.utils.isValidScreenComponent)
+local invariant = require("../utils/invariant")
+local isValidScreenComponent = require("../utils/isValidScreenComponent")
 
 local function getScreenComponent(routeConfig)
 	if not routeConfig then
@@ -45,14 +44,14 @@ return function(routeConfigs)
 			"The component for route '%s' must be a Roact component or table with 'getScreen'."
 				.. [[ For example:
 
-local MyScreen = require(script.Parent.MyScreen)
+local MyScreen = require("./MyScreen")
 ...
 %s = MyScreen,
 }
 
 You can also use a navigator:
 
-local MyNavigator = require(script.Parent.MyNavigator)
+local MyNavigator = require("./MyNavigator")
 ...
 %s = MyNavigator,
 }]],

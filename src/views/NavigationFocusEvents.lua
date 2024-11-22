@@ -1,12 +1,10 @@
 -- upstream https://github.com/react-navigation/react-navigation/blob/9b55493e7662f4d54c21f75e53eb3911675f61bc/packages/core/src/views/NavigationFocusEvents.js
 
-local root = script.Parent.Parent
-local Packages = root.Parent
-local LuauPolyfill = require(Packages.LuauPolyfill)
+local LuauPolyfill = require("@pkg/@jsdotlua/luau-polyfill")
 local Array = LuauPolyfill.Array
 
-local React = require(Packages.React)
-local Events = require(root.Events)
+local React = require("@pkg/@jsdotlua/react")
+local Events = require("../Events")
 
 local NavigationEventManager = React.Component:extend("NavigationEventManager")
 

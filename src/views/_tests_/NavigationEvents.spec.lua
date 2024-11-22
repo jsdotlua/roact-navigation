@@ -1,20 +1,18 @@
 -- upstream https://github.com/react-navigation/react-navigation/blob/20e2625f351f90fadadbf98890270e43e744225b/packages/core/src/views/__tests__/NavigationEvents.test.js
 
 return function()
-	local root = script.Parent.Parent.Parent
-	local Packages = root.Parent
-	local LuauPolyfill = require(Packages.LuauPolyfill)
+	local LuauPolyfill = require("@pkg/@jsdotlua/luau-polyfill")
 	local Array = LuauPolyfill.Array
 	local Object = LuauPolyfill.Object
-	local React = require(Packages.React)
-	local ReactRoblox = require(Packages.Dev.ReactRoblox)
-	local JestGlobals = require(Packages.Dev.JestGlobals)
+	local React = require("@pkg/@jsdotlua/react")
+	local ReactRoblox = require("@pkg/@jsdotlua/react-roblox")
+	local JestGlobals = require("@pkg/@jsdotlua/jest-globals")
 	local expect = JestGlobals.expect
 	local jest = JestGlobals.jest
 
-	local NavigationEvents = require(script.Parent.Parent.NavigationEvents)
-	local NavigationContext = require(root.views.NavigationContext)
-	local Events = require(root.Events)
+	local NavigationEvents = require("../NavigationEvents")
+	local NavigationContext = require("../../views/NavigationContext")
+	local Events = require("../../Events")
 
 	local function createPropListener()
 		return jest.fn()

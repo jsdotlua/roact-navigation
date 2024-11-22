@@ -1,11 +1,8 @@
 return function()
-	local routersModule = script.Parent.Parent
-	local RoactNavigationModule = routersModule.Parent
-	local Packages = RoactNavigationModule.Parent
-	local jestExpect = require(Packages.Dev.JestGlobals).expect
+	local jestExpect = require("@pkg/@jsdotlua/jest-globals").expect
 
-	local getNavigationActionCreators = require(routersModule.getNavigationActionCreators)
-	local NavigationActions = require(RoactNavigationModule.NavigationActions)
+	local getNavigationActionCreators = require("../getNavigationActionCreators")
+	local NavigationActions = require("../../NavigationActions")
 
 	it("should return a table with correct functions when called", function()
 		local result = getNavigationActionCreators()

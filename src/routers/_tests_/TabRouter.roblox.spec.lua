@@ -1,11 +1,8 @@
 return function()
-	local routersModule = script.Parent.Parent
-	local RoactNavigationModule = routersModule.Parent
-	local Packages = RoactNavigationModule.Parent
-	local jestExpect = require(Packages.Dev.JestGlobals).expect
+	local jestExpect = require("@pkg/@jsdotlua/jest-globals").expect
 
-	local TabRouter = require(routersModule.TabRouter)
-	local NavigationActions = require(RoactNavigationModule.NavigationActions)
+	local TabRouter = require("../TabRouter")
+	local NavigationActions = require("../../NavigationActions")
 
 	-- NOTE: Most functional tests are covered by SwitchRouter.spec.lua
 	-- We just check that we can mount a basic case, and check that our custom

@@ -1,5 +1,5 @@
 return function()
-	local getActiveChildNavigationOptions = require(script.Parent.Parent.getActiveChildNavigationOptions)
+	local getActiveChildNavigationOptions = require("../getActiveChildNavigationOptions")
 
 	it("should return a function", function()
 		expect(type(getActiveChildNavigationOptions)).to.equal("function")

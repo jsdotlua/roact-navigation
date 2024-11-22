@@ -1,14 +1,10 @@
 return function()
-	local viewsModule = script.Parent.Parent
-	local RoactNavigationModule = viewsModule.Parent
-	local Packages = RoactNavigationModule.Parent
+	local React = require("@pkg/@jsdotlua/react")
+	local ReactRoblox = require("@pkg/@jsdotlua/react-roblox")
+	local useNavigation = require("../useNavigation")
+	local NavigationContext = require("../NavigationContext")
 
-	local React = require(Packages.React)
-	local ReactRoblox = require(Packages.Dev.ReactRoblox)
-	local useNavigation = require(viewsModule.useNavigation)
-	local NavigationContext = require(viewsModule.NavigationContext)
-
-	local jestExpect = require(Packages.Dev.JestGlobals).expect
+	local jestExpect = require("@pkg/@jsdotlua/jest-globals").expect
 
 	local function defaultMockNavigation()
 		return {

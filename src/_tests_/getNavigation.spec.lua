@@ -1,11 +1,9 @@
 -- upstream https://github.com/react-navigation/react-navigation/blob/20e2625f351f90fadadbf98890270e43e744225b/packages/core/src/__tests__/getNavigation.test.js
 
 return function()
-	local RoactNavigationModule = script.Parent.Parent
-	local getNavigation = require(RoactNavigationModule.getNavigation)
-	local NavigationActions = require(RoactNavigationModule.NavigationActions)
-	local Packages = RoactNavigationModule.Parent
-	local JestGlobals = require(Packages.Dev.JestGlobals)
+	local getNavigation = require("../getNavigation")
+	local NavigationActions = require("../NavigationActions")
+	local JestGlobals = require("@pkg/@jsdotlua/jest-globals")
 	local expect = JestGlobals.expect
 	local jest = JestGlobals.jest
 

@@ -1,21 +1,18 @@
 return function()
-	local navigatorsModule = script.Parent.Parent
-	local RoactNavigationModule = navigatorsModule.Parent
-	local Packages = RoactNavigationModule.Parent
-	local JestGlobals = require(Packages.Dev.JestGlobals)
-	local React = require(Packages.React)
-	local ReactRoblox = require(Packages.Dev.ReactRoblox)
+	local JestGlobals = require("@pkg/@jsdotlua/jest-globals")
+	local React = require("@pkg/@jsdotlua/react")
+	local ReactRoblox = require("@pkg/@jsdotlua/react-roblox")
 
 	local expect = JestGlobals.expect
 	local jest = JestGlobals.jest
 
-	local createRobloxStackNavigator = require(navigatorsModule.createRobloxStackNavigator)
-	local getChildNavigation = require(RoactNavigationModule.getChildNavigation)
+	local createRobloxStackNavigator = require("../createRobloxStackNavigator")
+	local getChildNavigation = require("../../getChildNavigation")
 
-	local Events = require(RoactNavigationModule.Events)
-	local NavigationActions = require(RoactNavigationModule.NavigationActions)
-	local createAppContainer = require(RoactNavigationModule.createAppContainer).createAppContainer
-	local waitUntil = require(RoactNavigationModule.utils.waitUntil)
+	local Events = require("../../Events")
+	local NavigationActions = require("../../NavigationActions")
+	local createAppContainer = require("../../createAppContainer").createAppContainer
+	local waitUntil = require("../../utils/waitUntil")
 
 	it("should return a mountable Roact component", function()
 		local navigator = createRobloxStackNavigator({

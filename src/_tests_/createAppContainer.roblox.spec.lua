@@ -1,14 +1,12 @@
 return function()
-	local RoactNavigationModule = script.Parent.Parent
-	local Packages = RoactNavigationModule.Parent
-	local React = require(Packages.React)
-	local ReactRoblox = require(Packages.Dev.ReactRoblox)
-	local jestExpect = require(Packages.Dev.JestGlobals).expect
-	local NavigationActions = require(RoactNavigationModule.NavigationActions)
-	local createAppContainerExports = require(RoactNavigationModule.createAppContainer)
+	local React = require("@pkg/@jsdotlua/react")
+	local ReactRoblox = require("@pkg/@jsdotlua/react-roblox")
+	local jestExpect = require("@pkg/@jsdotlua/jest-globals").expect
+	local NavigationActions = require("../NavigationActions")
+	local createAppContainerExports = require("../createAppContainer")
 	local createAppContainer = createAppContainerExports.createAppContainer
 	local _TESTING_ONLY_reset_container_count = createAppContainerExports._TESTING_ONLY_reset_container_count
-	local createSwitchNavigator = require(RoactNavigationModule.navigators.createSwitchNavigator)
+	local createSwitchNavigator = require("../navigators/createSwitchNavigator")
 
 	beforeEach(function()
 		_TESTING_ONLY_reset_container_count()

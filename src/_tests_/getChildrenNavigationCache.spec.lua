@@ -1,9 +1,7 @@
 -- upstream https://github.com/react-navigation/react-navigation/blob/f10543f9fcc0f347c9d23aeb57616fd0f21cd4e3/packages/core/src/__tests__/getChildrenNavigationCache.test.js
 return function()
-	local RoactNavigationModule = script.Parent.Parent
-	local getChildrenNavigationCache = require(RoactNavigationModule.getChildrenNavigationCache)
-	local Packages = RoactNavigationModule.Parent
-	local jestExpect = require(Packages.Dev.JestGlobals).expect
+	local getChildrenNavigationCache = require("../getChildrenNavigationCache")
+	local jestExpect = require("@pkg/@jsdotlua/jest-globals").expect
 
 	it("should return empty table if navigation arg not provided", function()
 		jestExpect(getChildrenNavigationCache()._childrenNavigation).toBeUndefined()

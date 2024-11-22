@@ -1,6 +1,6 @@
-local RoactNavigation = require(script.Parent.Parent.Parent)
-local TrackNavigationEvents = require(script.Parent.Parent.TrackNavigationEvents)
-local PageNavigationEvent = require(script.Parent.Parent.PageNavigationEvent)
+local RoactNavigation = require("../..")
+local TrackNavigationEvents = require("../TrackNavigationEvents")
+local PageNavigationEvent = require("../PageNavigationEvent")
 
 return function()
 	local testPage = "TEST PAGE"

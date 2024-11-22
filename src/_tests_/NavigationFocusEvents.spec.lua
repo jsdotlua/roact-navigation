@@ -1,24 +1,21 @@
 -- upstream https://github.com/react-navigation/react-navigation/blob/9b55493e7662f4d54c21f75e53eb3911675f61bc/packages/core/src/__tests__/NavigationFocusEvents.test.js
 return function()
-	local RoactNavigationModule = script.Parent.Parent
-	local Packages = RoactNavigationModule.Parent
-
-	local TabRouter = require(RoactNavigationModule.routers.TabRouter)
-	local createAppContainerExports = require(RoactNavigationModule.createAppContainer)
+	local TabRouter = require("../routers/TabRouter")
+	local createAppContainerExports = require("../createAppContainer")
 	local createAppContainer = createAppContainerExports.createAppContainer
 	local _TESTING_ONLY_reset_container_count = createAppContainerExports._TESTING_ONLY_reset_container_count
-	local createNavigator = require(RoactNavigationModule.navigators.createNavigator)
-	local Events = require(RoactNavigationModule.Events)
-	local NavigationActions = require(RoactNavigationModule.NavigationActions)
-	local waitUntil = require(RoactNavigationModule.utils.waitUntil)
+	local createNavigator = require("../navigators/createNavigator")
+	local Events = require("../Events")
+	local NavigationActions = require("../NavigationActions")
+	local waitUntil = require("../utils/waitUntil")
 
-	local JestGlobals = require(Packages.Dev.JestGlobals)
+	local JestGlobals = require("@pkg/@jsdotlua/jest-globals")
 	local expect = JestGlobals.expect
 	local jest = JestGlobals.jest
-	local LuauPolyfill = require(Packages.LuauPolyfill)
+	local LuauPolyfill = require("@pkg/@jsdotlua/luau-polyfill")
 	local Array = LuauPolyfill.Array
-	local React = require(Packages.React)
-	local ReactRoblox = require(Packages.Dev.ReactRoblox)
+	local React = require("@pkg/@jsdotlua/react")
+	local ReactRoblox = require("@pkg/@jsdotlua/react-roblox")
 
 	-- deviation: utility function moved out of test scope because
 	-- it is shared across both tests

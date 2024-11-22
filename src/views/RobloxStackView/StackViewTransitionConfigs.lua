@@ -1,12 +1,7 @@
-local RobloxStackView = script.Parent
-local views = RobloxStackView.Parent
-local root = views.Parent
-local Packages = root.Parent
-
-local LuauPolyfill = require(Packages.LuauPolyfill)
+local LuauPolyfill = require("@pkg/@jsdotlua/luau-polyfill")
 local Object = LuauPolyfill.Object
-local StackViewInterpolator = require(RobloxStackView.StackViewInterpolator)
-local StackPresentationStyle = require(RobloxStackView.StackPresentationStyle)
+local StackViewInterpolator = require("./StackViewInterpolator")
+local StackPresentationStyle = require("./StackPresentationStyle")
 
 local DefaultTransitionSpec = {
 	frequency = 3, -- Hz

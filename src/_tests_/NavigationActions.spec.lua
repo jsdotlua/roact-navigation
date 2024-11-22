@@ -1,10 +1,8 @@
 -- upstream https://github.com/react-navigation/react-navigation/blob/72e8160537954af40f1b070aa91ef45fc02bba69/packages/core/src/__tests__/NavigationActions.test.js
 
 return function()
-	local RoactNavigationModule = script.Parent.Parent
-	local NavigationActions = require(RoactNavigationModule.NavigationActions)
-	local Packages = RoactNavigationModule.Parent
-	local jestExpect = require(Packages.Dev.JestGlobals).expect
+	local NavigationActions = require("../NavigationActions")
+	local jestExpect = require("@pkg/@jsdotlua/jest-globals").expect
 
 	describe("generic navigation actions", function()
 		local params = { foo = "bar" }

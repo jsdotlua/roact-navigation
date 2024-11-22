@@ -1,13 +1,10 @@
 -- upstream https://github.com/react-navigation/react-navigation/blob/20e2625f351f90fadadbf98890270e43e744225b/packages/core/src/views/withNavigationFocus.js
 -- documentation: https://reactnavigation.org/docs/4.x/with-navigation-focus/
-local views = script.Parent
-local root = views.Parent
-local Packages = root.Parent
-local LuauPolyfill = require(Packages.LuauPolyfill)
+local LuauPolyfill = require("@pkg/@jsdotlua/luau-polyfill")
 local Object = LuauPolyfill.Object
-local React = require(Packages.React)
-local Events = require(root.Events)
-local withNavigation = require(views.withNavigation)
+local React = require("@pkg/@jsdotlua/react")
+local Events = require("../Events")
+local withNavigation = require("./withNavigation")
 
 local function isComponent(component)
 	local valueType = type(component)

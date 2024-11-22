@@ -1,11 +1,9 @@
 -- upstream https://github.com/react-navigation/react-navigation/blob/62da341b672a83786b9c3a80c8a38f929964d7cc/packages/core/src/__tests__/NavigationStateUtils.test.js
 
 return function()
-	local RoactNavigationModule = script.Parent.Parent
-	local Packages = RoactNavigationModule.Parent
-	local jestExpect = require(Packages.Dev.JestGlobals).expect
+	local jestExpect = require("@pkg/@jsdotlua/jest-globals").expect
 
-	local StateUtils = require(RoactNavigationModule.StateUtils)
+	local StateUtils = require("../StateUtils")
 
 	local routeName = "Anything"
 

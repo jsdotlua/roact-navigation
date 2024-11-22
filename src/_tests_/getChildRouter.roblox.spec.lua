@@ -1,8 +1,6 @@
 return function()
-	local RoactNavigationModule = script.Parent.Parent
-	local getChildRouter = require(RoactNavigationModule.getChildRouter)
-	local Packages = RoactNavigationModule.Parent
-	local jestExpect = require(Packages.Dev.JestGlobals).expect
+	local getChildRouter = require("../getChildRouter")
+	local jestExpect = require("@pkg/@jsdotlua/jest-globals").expect
 
 	it("should throw if routeName is not a string", function()
 		jestExpect(function()

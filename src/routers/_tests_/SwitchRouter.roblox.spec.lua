@@ -1,12 +1,9 @@
 return function()
-	local routersModule = script.Parent.Parent
-	local RoactNavigationModule = routersModule.Parent
-	local Packages = RoactNavigationModule.Parent
-	local jestExpect = require(Packages.Dev.JestGlobals).expect
+	local jestExpect = require("@pkg/@jsdotlua/jest-globals").expect
 
-	local NavigationActions = require(RoactNavigationModule.NavigationActions)
-	local BackBehavior = require(RoactNavigationModule.BackBehavior)
-	local SwitchRouter = require(routersModule.SwitchRouter)
+	local NavigationActions = require("../../NavigationActions")
+	local BackBehavior = require("../../BackBehavior")
+	local SwitchRouter = require("../SwitchRouter")
 
 	it("should be a function", function()
 		jestExpect(SwitchRouter).toEqual(jestExpect.any("function"))

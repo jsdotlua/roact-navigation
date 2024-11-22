@@ -1,16 +1,11 @@
-local RobloxStackView = script.Parent
-local views = RobloxStackView.Parent
-local root = views.Parent
-local Packages = root.Parent
-
-local LuauPolyfill = require(Packages.LuauPolyfill)
+local LuauPolyfill = require("@pkg/@jsdotlua/luau-polyfill")
 local Object = LuauPolyfill.Object
-local React = require(Packages.React)
-local StackPresentationStyle = require(RobloxStackView.StackPresentationStyle)
-local StackViewTransitionConfigs = require(RobloxStackView.StackViewTransitionConfigs)
-local StackViewOverlayFrame = require(RobloxStackView.StackViewOverlayFrame)
-local StackViewCard = require(RobloxStackView.StackViewCard)
-local SceneView = require(views.SceneView)
+local React = require("@pkg/@jsdotlua/react")
+local StackPresentationStyle = require("../RobloxStackView/StackPresentationStyle")
+local StackViewTransitionConfigs = require("../RobloxStackView/StackViewTransitionConfigs")
+local StackViewOverlayFrame = require("../RobloxStackView/StackViewOverlayFrame")
+local StackViewCard = require("../RobloxStackView/StackViewCard")
+local SceneView = require("../../views/SceneView")
 
 local defaultScreenOptions = {
 	absorbInput = true,

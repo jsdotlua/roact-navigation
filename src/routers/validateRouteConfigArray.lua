@@ -1,5 +1,5 @@
-local invariant = require(script.Parent.Parent.utils.invariant)
-local isValidScreenComponent = require(script.Parent.Parent.utils.isValidScreenComponent)
+local invariant = require("../utils/invariant")
+local isValidScreenComponent = require("../utils/isValidScreenComponent")
 
 --[[
 	This utility checks to make sure that configs passed to a

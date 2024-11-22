@@ -1,13 +1,10 @@
 return function()
-	local navigatorsModule = script.Parent.Parent
-	local RoactNavigationModule = navigatorsModule.Parent
-	local Packages = RoactNavigationModule.Parent
-	local expect = require(Packages.Dev.JestGlobals).expect
-	local React = require(Packages.React)
-	local ReactRoblox = require(Packages.Dev.ReactRoblox)
+	local expect = require("@pkg/@jsdotlua/jest-globals").expect
+	local React = require("@pkg/@jsdotlua/react")
+	local ReactRoblox = require("@pkg/@jsdotlua/react-roblox")
 
-	local createRobloxSwitchNavigator = require(navigatorsModule.createRobloxSwitchNavigator)
-	local getChildNavigation = require(RoactNavigationModule.getChildNavigation)
+	local createRobloxSwitchNavigator = require("../createRobloxSwitchNavigator")
+	local getChildNavigation = require("../../getChildNavigation")
 
 	it("should return a mountable Roact component", function()
 		local navigator = createRobloxSwitchNavigator({

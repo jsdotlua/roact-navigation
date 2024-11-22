@@ -1,8 +1,6 @@
 return function()
-	local RoactNavigationModule = script.Parent.Parent
-	local BackBehavior = require(RoactNavigationModule.BackBehavior)
-	local Packages = RoactNavigationModule.Parent
-	local jestExpect = require(Packages.Dev.JestGlobals).expect
+	local BackBehavior = require("../BackBehavior")
+	local jestExpect = require("@pkg/@jsdotlua/jest-globals").expect
 
 	describe("BackBehavior token tests", function()
 		it("should return same object for each token for multiple calls", function()

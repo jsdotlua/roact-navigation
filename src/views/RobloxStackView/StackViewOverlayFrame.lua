@@ -1,9 +1,5 @@
-local RobloxStackView = script.Parent
-local root = RobloxStackView.Parent.Parent
-local Packages = root.Parent
-
-local React = require(Packages.React)
-local lerp = require(root.utils.lerp)
+local React = require("@pkg/@jsdotlua/react")
+local lerp = require("../../utils/lerp")
 
 local StackViewOverlayFrame = React.Component:extend("StackViewOverlayFrame")
 

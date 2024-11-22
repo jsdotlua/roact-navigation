@@ -23,11 +23,8 @@
 
 	The props table may contain other changes, depending on the requirements of the animation.
 ]]
-local RobloxStackView = script.Parent
-local root = RobloxStackView.Parent.Parent
-
-local getSceneIndicesForInterpolationInputRange = require(root.utils.getSceneIndicesForInterpolationInputRange)
-local lerp = require(root.utils.lerp)
+local getSceneIndicesForInterpolationInputRange = require("../../utils/getSceneIndicesForInterpolationInputRange")
+local lerp = require("../../utils/lerp")
 
 -- Render initial style when layout hasn't been measured yet.
 local function forInitial(props)

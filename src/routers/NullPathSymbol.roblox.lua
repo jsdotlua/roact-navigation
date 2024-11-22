@@ -1,5 +1,3 @@
-local RoactNavigationModule = script.Parent.Parent
-
-local NavigationSymbol = require(RoactNavigationModule.NavigationSymbol)
+local NavigationSymbol = require("../NavigationSymbol")
 
 return NavigationSymbol("NullPath")

@@ -1,16 +1,12 @@
 return function()
-	local viewsModule = script.Parent.Parent
-	local RoactNavigationModule = viewsModule.Parent
-	local Packages = RoactNavigationModule.Parent
-
-	local React = require(Packages.React)
-	local ReactRoblox = require(Packages.Dev.ReactRoblox)
-	local JestGlobals = require(Packages.Dev.JestGlobals)
+	local React = require("@pkg/@jsdotlua/react")
+	local ReactRoblox = require("@pkg/@jsdotlua/react-roblox")
+	local JestGlobals = require("@pkg/@jsdotlua/jest-globals")
 
 	local expect = JestGlobals.expect
 
-	local withNavigation = require(viewsModule.withNavigation)
-	local NavigationContext = require(viewsModule.NavigationContext)
+	local withNavigation = require("../withNavigation")
+	local NavigationContext = require("../NavigationContext")
 
 	it("throws if no component is provided", function()
 		expect(function()

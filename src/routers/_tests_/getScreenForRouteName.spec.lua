@@ -1,10 +1,7 @@
 return function()
-	local routersModule = script.Parent.Parent
-	local RoactNavigationModule = routersModule.Parent
-	local Packages = RoactNavigationModule.Parent
-	local jestExpect = require(Packages.Dev.JestGlobals).expect
+	local jestExpect = require("@pkg/@jsdotlua/jest-globals").expect
 
-	local getScreenForRouteName = require(routersModule.getScreenForRouteName)
+	local getScreenForRouteName = require("../getScreenForRouteName")
 
 	it("should throw if requested route is not present within table", function()
 		local function shouldThrow()

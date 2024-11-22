@@ -1,4 +1,4 @@
-local NavigationSymbol = require(script.Parent.Parent.Parent.NavigationSymbol)
+local NavigationSymbol = require("../../NavigationSymbol")
 
 local DEFAULT_SYMBOL = NavigationSymbol("DEFAULT")
 local MODAL_SYMBOL = NavigationSymbol("MODAL")

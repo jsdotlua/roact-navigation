@@ -1,9 +1,7 @@
 return function()
-	local RoactNavigationModule = script.Parent.Parent
-	local Packages = RoactNavigationModule.Parent
-	local expect = require(Packages.Dev.JestGlobals).expect
+	local expect = require("@pkg/@jsdotlua/jest-globals").expect
 
-	local NavigationSymbol = require(RoactNavigationModule.NavigationSymbol)
+	local NavigationSymbol = require("../NavigationSymbol")
 
 	it("should give an opaque object", function()
 		local symbol = NavigationSymbol("foo")

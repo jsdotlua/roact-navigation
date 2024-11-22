@@ -1,7 +1,4 @@
-local root = script.Parent.Parent
-local Packages = root.Parent
-
-local ReactRoblox = require(Packages.Dev.ReactRoblox)
+local ReactRoblox = require("@pkg/@jsdotlua/react-roblox")
 
 return function(predicate, timeout)
 	timeout = timeout or 1

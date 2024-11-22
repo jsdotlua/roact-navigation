@@ -1,17 +1,14 @@
 return function()
-	local routersModule = script.Parent.Parent
-	local RoactNavigationModule = routersModule.Parent
-	local RoactNavigation = require(RoactNavigationModule)
-	local Packages = RoactNavigationModule.Parent
-	local React = require(Packages.React)
-	local jestExpect = require(Packages.Dev.JestGlobals).expect
+	local RoactNavigation = require("../..")
+	local React = require("@pkg/@jsdotlua/react")
+	local jestExpect = require("@pkg/@jsdotlua/jest-globals").expect
 
-	local StackRouter = require(routersModule.StackRouter)
-	local TabRouter = require(routersModule.TabRouter)
-	local SwitchRouter = require(routersModule.SwitchRouter)
-	local NavigationActions = require(RoactNavigationModule.NavigationActions)
-	local StackActions = require(routersModule.StackActions)
-	local KeyGenerator = require(RoactNavigationModule.utils.KeyGenerator)
+	local StackRouter = require("../StackRouter")
+	local TabRouter = require("../TabRouter")
+	local SwitchRouter = require("../SwitchRouter")
+	local NavigationActions = require("../../NavigationActions")
+	local StackActions = require("../StackActions")
+	local KeyGenerator = require("../../utils/KeyGenerator")
 
 	local ROUTERS = {
 		TabRouter = TabRouter,

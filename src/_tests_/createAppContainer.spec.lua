@@ -1,24 +1,21 @@
 return function()
 	local LogService = game:GetService("LogService")
 
-	local RoactNavigationModule = script.Parent.Parent
-	local Packages = RoactNavigationModule.Parent
-
-	local React = require(Packages.React)
-	local ReactRoblox = require(Packages.Dev.ReactRoblox)
-	local JestGlobals = require(Packages.Dev.JestGlobals)
+	local React = require("@pkg/@jsdotlua/react")
+	local ReactRoblox = require("@pkg/@jsdotlua/react-roblox")
+	local JestGlobals = require("@pkg/@jsdotlua/jest-globals")
 	local jest = JestGlobals.jest
 	local expect = JestGlobals.expect
 
-	local NavigationActions = require(RoactNavigationModule.NavigationActions)
-	local createNavigator = require(RoactNavigationModule.navigators.createNavigator)
-	local createAppContainerExports = require(RoactNavigationModule.createAppContainer)
+	local NavigationActions = require("../NavigationActions")
+	local createNavigator = require("../navigators/createNavigator")
+	local createAppContainerExports = require("../createAppContainer")
 	local createAppContainer = createAppContainerExports.createAppContainer
 	local _TESTING_ONLY_reset_container_count = createAppContainerExports._TESTING_ONLY_reset_container_count
 
-	local StackRouter = require(RoactNavigationModule.routers.StackRouter)
-	local SwitchView = require(RoactNavigationModule.views.SwitchView.SwitchView)
-	local waitUntil = require(RoactNavigationModule.utils.waitUntil)
+	local StackRouter = require("../routers/StackRouter")
+	local SwitchView = require("../views/SwitchView/SwitchView")
+	local waitUntil = require("../utils/waitUntil")
 
 	local function createStackNavigator(routeConfigMap, stackConfig)
 		local router = StackRouter(routeConfigMap, stackConfig)

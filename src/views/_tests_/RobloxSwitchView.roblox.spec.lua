@@ -1,9 +1,8 @@
 return function()
-	local Packages = script.Parent.Parent.Parent.Parent
-	local React = require(Packages.React)
-	local ReactRoblox = require(Packages.Dev.ReactRoblox)
-	local JestGlobals = require(Packages.Dev.JestGlobals)
-	local RobloxSwitchView = require(script.Parent.Parent.RobloxSwitchView)
+	local React = require("@pkg/@jsdotlua/react")
+	local ReactRoblox = require("@pkg/@jsdotlua/react-roblox")
+	local JestGlobals = require("@pkg/@jsdotlua/jest-globals")
+	local RobloxSwitchView = require("../RobloxSwitchView")
 
 	local expect = JestGlobals.expect
 

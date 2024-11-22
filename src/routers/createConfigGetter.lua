@@ -1,14 +1,10 @@
 -- upstream https://github.com/react-navigation/react-navigation/blob/6390aacd07fd647d925dfec842a766c8aad5272f/packages/core/src/routers/createConfigGetter.js
-local routers = script.Parent
-local root = routers.Parent
-local Packages = root.Parent
-
-local LuauPolyfill = require(Packages.LuauPolyfill)
+local LuauPolyfill = require("@pkg/@jsdotlua/luau-polyfill")
 local Object = LuauPolyfill.Object
 
-local getScreenForRouteName = require(routers.getScreenForRouteName)
-local validateScreenOptions = require(routers.validateScreenOptions)
-local invariant = require(root.utils.invariant)
+local getScreenForRouteName = require("./getScreenForRouteName")
+local validateScreenOptions = require("./validateScreenOptions")
+local invariant = require("../utils/invariant")
 
 local function applyConfig(configurer, navigationOptions, configProps)
 	navigationOptions = navigationOptions or {}

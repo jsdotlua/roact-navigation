@@ -1,14 +1,12 @@
 -- upstream: https://github.com/react-navigation/stack/blob/676bc3b45a7715edecd13530ae3b39ee1fe48833/src/views/Transitioner.tsx
-local root = script.Parent.Parent.Parent
-local Packages = root.Parent
-local LuauPolyfill = require(Packages.LuauPolyfill)
+local LuauPolyfill = require("@pkg/@jsdotlua/luau-polyfill")
 local Array = LuauPolyfill.Array
 local Object = LuauPolyfill.Object
 
-local React = require(Packages.React)
-local Otter = require(Packages.Otter)
-local ScenesReducer = require(script.Parent.ScenesReducer)
-local invariant = require(root.utils.invariant)
+local React = require("@pkg/@jsdotlua/react")
+local Otter = require("@pkg/@jsdotlua/otter")
+local ScenesReducer = require("./ScenesReducer")
+local invariant = require("../../utils/invariant")
 
 local DEFAULT_TRANSITION_SPEC = {
 	frequency = 4, -- Hz

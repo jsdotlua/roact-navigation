@@ -1,5 +1,5 @@
 return function()
-	local KeyGenerator = require(script.Parent.Parent.KeyGenerator)
+	local KeyGenerator = require("../KeyGenerator")
 
 	it("should generate a new string key when called", function()
 		KeyGenerator._TESTING_ONLY_normalize_keys()

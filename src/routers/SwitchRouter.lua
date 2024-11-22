@@ -1,20 +1,18 @@
 -- upstream https://github.com/react-navigation/react-navigation/blob/62da341b672a83786b9c3a80c8a38f929964d7cc/packages/core/src/routers/SwitchRouter.js
-local Root = script.Parent.Parent
-local Packages = Root.Parent
-local LuauPolyfill = require(Packages.LuauPolyfill)
+local LuauPolyfill = require("@pkg/@jsdotlua/luau-polyfill")
 local Array = LuauPolyfill.Array
 local Object = LuauPolyfill.Object
 
-local NavigationActions = require(Root.NavigationActions)
-local BackBehavior = require(Root.BackBehavior)
-local getScreenForRouteName = require(script.Parent.getScreenForRouteName)
-local createConfigGetter = require(script.Parent.createConfigGetter)
-local validateRouteConfigMap = require(script.Parent.validateRouteConfigMap)
-local validateRouteConfigArray = require(script.Parent.validateRouteConfigArray)
-local invariant = require(Root.utils.invariant)
-local StackActions = require(Root.routers.StackActions)
-local SwitchActions = require(script.Parent.SwitchActions)
-local pathUtils = require(script.Parent.pathUtils)
+local NavigationActions = require("../NavigationActions")
+local BackBehavior = require("../BackBehavior")
+local getScreenForRouteName = require("./getScreenForRouteName")
+local createConfigGetter = require("./createConfigGetter")
+local validateRouteConfigMap = require("./validateRouteConfigMap")
+local validateRouteConfigArray = require("./validateRouteConfigArray")
+local invariant = require("../utils/invariant")
+local StackActions = require("../routers/StackActions")
+local SwitchActions = require("./SwitchActions")
+local pathUtils = require("./pathUtils")
 local createPathParser = pathUtils.createPathParser
 
 local function defaultActionCreators()

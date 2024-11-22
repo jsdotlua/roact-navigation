@@ -1,4 +1,4 @@
-local invariant = require(script.Parent.Parent.utils.invariant)
+local invariant = require("../utils/invariant")
 
 return function(screenOptions, route)
 	invariant(

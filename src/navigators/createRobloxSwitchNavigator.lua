@@ -1,7 +1,6 @@
-local root = script.Parent.Parent
-local createNavigator = require(script.Parent.createNavigator)
-local SwitchRouter = require(root.routers.SwitchRouter)
-local RobloxSwitchView = require(root.views.RobloxSwitchView)
+local createNavigator = require("./createNavigator")
+local SwitchRouter = require("../routers/SwitchRouter")
+local RobloxSwitchView = require("../views/RobloxSwitchView")
 
 --[[
 	Creates a navigator component that provides simple screen "switcher" behavior.

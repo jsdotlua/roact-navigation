@@ -1,8 +1,6 @@
 return function()
-	local RoactNavigationModule = script.Parent.Parent
-	local NavigationActions = require(RoactNavigationModule.NavigationActions)
-	local Packages = RoactNavigationModule.Parent
-	local jestExpect = require(Packages.Dev.JestGlobals).expect
+	local NavigationActions = require("../NavigationActions")
+	local jestExpect = require("@pkg/@jsdotlua/jest-globals").expect
 
 	it("throws when indexing an unknown field", function()
 		jestExpect(function()

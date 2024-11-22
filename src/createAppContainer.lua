@@ -1,19 +1,17 @@
 -- upstream https://github.com/react-navigation/react-navigation/blob/9b55493e7662f4d54c21f75e53eb3911675f61bc/packages/native/src/createAppContainer.js
 
-local RoactNavigationModule = script.Parent
-local Packages = RoactNavigationModule.Parent
-local React = require(Packages.React)
-local LuauPolyfill = require(Packages.LuauPolyfill)
+local React = require("@pkg/@jsdotlua/react")
+local LuauPolyfill = require("@pkg/@jsdotlua/luau-polyfill")
 local console = LuauPolyfill.console
 local Object = LuauPolyfill.Object
-local NavigationActions = require(RoactNavigationModule.NavigationActions)
-local Events = require(RoactNavigationModule.Events)
-local NavigationContext = require(RoactNavigationModule.views.NavigationContext)
-local getNavigation = require(RoactNavigationModule.getNavigation)
+local NavigationActions = require("./NavigationActions")
+local Events = require("./Events")
+local NavigationContext = require("./views/NavigationContext")
+local getNavigation = require("./getNavigation")
 -- ROBLOX deviation START: tie invariant to assert, which avoids the function call overhead
 local invariant = assert
 -- ROBLOX deviation END
-local pathUtils = require(RoactNavigationModule.routers.pathUtils)
+local pathUtils = require("./routers/pathUtils")
 
 local urlToPathAndParams = pathUtils.urlToPathAndParams
 

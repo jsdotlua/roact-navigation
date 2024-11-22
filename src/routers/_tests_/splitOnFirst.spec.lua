@@ -1,11 +1,8 @@
 -- upstream: https://github.com/sindresorhus/split-on-first/blob/v1.1.0/test.js
 return function()
-	local routersModule = script.Parent.Parent
-	local RoactNavigationModule = routersModule.Parent
-	local Packages = RoactNavigationModule.Parent
-	local jestExpect = require(Packages.Dev.JestGlobals).expect
+	local jestExpect = require("@pkg/@jsdotlua/jest-globals").expect
 
-	local splitOnFirst = require(routersModule.splitOnFirst)
+	local splitOnFirst = require("../splitOnFirst")
 
 	it("main", function()
 		jestExpect(splitOnFirst("a-b-c", "-")).toEqual({ "a", "b-c" })
