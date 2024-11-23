@@ -24,12 +24,17 @@
     {
       "rule": "inject_global_value",
       "identifier": "DEV",
-      "value": false
+      "value": true
     },
     {
       "rule": "inject_global_value",
       "identifier": "__DEV__",
-      "value": false
+      "value": true
+    },
+    {
+      "rule": "inject_global_value",
+      "identifier": "__ROACT_17_MOCK_SCHEDULER__",
+      "value": true
     },
     "compute_expression",
     "remove_unused_if_branch",

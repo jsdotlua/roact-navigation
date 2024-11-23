@@ -16,9 +16,6 @@
     "ServerScriptService": {
       "RunTests": {
         "$path": "./scripts/roblox-test.server.lua"
-      },
-      "TestsSetup": {
-        "$path": "./tests"
       }
     },
     "HttpService": {

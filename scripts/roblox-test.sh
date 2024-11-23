@@ -15,10 +15,10 @@ rm -rf temp
 
 rojo sourcemap test-place.project.json -o sourcemap.json
 
-darklua process --config $DARKLUA_CONFIG tests temp/tests
 darklua process --config $DARKLUA_CONFIG scripts/roblox-test.server.lua temp/scripts/roblox-test.server.lua
 darklua process --config $DARKLUA_CONFIG node_modules temp/node_modules
 darklua process --config $DARKLUA_CONFIG src temp/src
+darklua process --config $DARKLUA_CONFIG Storybook temp/Storybook
 
 cp test-place.project.json temp/
 
