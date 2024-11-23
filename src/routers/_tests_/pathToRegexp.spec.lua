@@ -9,7 +9,6 @@ local JestGlobals = require("@pkg/@jsdotlua/jest-globals")
 local expect = JestGlobals.expect
 local it = JestGlobals.it
 local describe = JestGlobals.describe
-local beforeEach = JestGlobals.beforeEach
 local pathToRegexp = require("../pathToRegexp")
 
 local undefined = {}
