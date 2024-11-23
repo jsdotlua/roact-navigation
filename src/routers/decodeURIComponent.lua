@@ -1,10 +1,7 @@
 -- upstream: https://github.com/SamVerschueren/decode-uri-component/blob/v0.2.0/index.js
-local RoactNavigationModule = script.Parent.Parent
-local Packages = RoactNavigationModule.Parent
-
-local LuauPolyfill = require(Packages.LuauPolyfill)
+local LuauPolyfill = require("@pkg/@jsdotlua/luau-polyfill")
 local Array = LuauPolyfill.Array
-local RegExp = require(Packages.RegExp)
+local RegExp = require("@pkg/luau-regexp")
 
 -- deviation: define this function to get an equivalent of String.match
 -- from JavaScript using our basic RegExp implementation

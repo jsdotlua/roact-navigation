@@ -1,11 +1,7 @@
-local views = script.Parent
-local root = views.Parent
-local Packages = root.Parent
-
-local LuauPolyfill = require(Packages.LuauPolyfill)
+local LuauPolyfill = require("@pkg/@jsdotlua/luau-polyfill")
 local Object = LuauPolyfill.Object
-local React = require(Packages.React)
-local SceneView = require(views.SceneView)
+local React = require("@pkg/@jsdotlua/react")
+local SceneView = require("../views/SceneView")
 
 local defaultNavigationConfig = {
 	keepVisitedScreensMounted = false,

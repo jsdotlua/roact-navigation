@@ -1,26 +1,22 @@
 -- upstream https://github.com/react-navigation/react-navigation/blob/6390aacd07fd647d925dfec842a766c8aad5272f/packages/core/src/routers/pathUtils.js
 
-local routersModule = script.Parent
-local RoactNavigationModule = routersModule.Parent
-local Packages = RoactNavigationModule.Parent
-
-local LuauPolyfill = require(Packages.LuauPolyfill)
+local LuauPolyfill = require("@pkg/@jsdotlua/luau-polyfill")
 local Array = LuauPolyfill.Array
 local Object = LuauPolyfill.Object
 local String = LuauPolyfill.String
-local RegExp = require(Packages.RegExp)
-local invariant = require(RoactNavigationModule.utils.invariant)
-local NavigationActions = require(RoactNavigationModule.NavigationActions)
-local pathToRegexpExports = require(routersModule.pathToRegexp)
+local RegExp = require("@pkg/luau-regexp")
+local invariant = require("../utils/invariant")
+local NavigationActions = require("../NavigationActions")
+local pathToRegexpExports = require("./pathToRegexp")
 local compile = pathToRegexpExports.compile
 local pathToRegexp = pathToRegexpExports.pathToRegexp
-local queryString = require(routersModule.queryString)
-local ChildIsScreenRouterSymbol = require(routersModule:FindFirstChild("ChildIsScreenRouterSymbol.roblox"))
-local NullPathSymbol = require(routersModule:FindFirstChild("NullPathSymbol.roblox"))
+local queryString = require("./queryString")
+local ChildIsScreenRouterSymbol = require("../routers/ChildIsScreenRouterSymbol.roblox.lua")
+local NullPathSymbol = require("../routers/NullPathSymbol.roblox.lua")
 
 -- deviation: the engine supports URL encoding with `HttpService:URLEncode(...)` but there is no
 -- method for decoding. Instead it uses this module that upstream depends on
-local decodeURIComponent = require(routersModule.decodeURIComponent)
+local decodeURIComponent = require("./decodeURIComponent")
 
 local exports = {}
 

@@ -1,4 +1,4 @@
-local NavigationSymbol = require(script.Parent.NavigationSymbol)
+local NavigationSymbol = require("./NavigationSymbol")
 
 local WILL_FOCUS_TOKEN = NavigationSymbol("WILL_FOCUS")
 local DID_FOCUS_TOKEN = NavigationSymbol("DID_FOCUS")

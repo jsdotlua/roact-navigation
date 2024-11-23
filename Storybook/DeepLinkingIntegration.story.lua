@@ -1,15 +1,12 @@
 return function(target, linkingProtocolMock)
-	local Storybook = script.Parent
-	local Packages = Storybook.Parent
-
-	local setupReactStory = require(Storybook.setupReactStory)
-	local React = require(Packages.React)
-	local RoactNavigation = require(Packages.RoactNavigation)
+	local setupReactStory = require("./setupReactStory")
+	local React = require("@pkg/@jsdotlua/react")
+	local RoactNavigation = require("../src")
 
 	local WHITE = Color3.fromRGB(255, 255, 255)
 	local BLACK = Color3.fromRGB(0, 0, 0)
 
-	local createLinkingProtocolMock = require(Storybook.createLinkingProtocolMock)
+	local createLinkingProtocolMock = require("./createLinkingProtocolMock")
 
 	if linkingProtocolMock == nil then
 		linkingProtocolMock = createLinkingProtocolMock("login")

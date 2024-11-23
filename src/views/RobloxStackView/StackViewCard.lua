@@ -1,10 +1,5 @@
-local RobloxStackView = script.Parent
-local views = RobloxStackView.Parent
-local root = views.Parent
-local Packages = root.Parent
-
-local React = require(Packages.React)
-local invariant = require(root.utils.invariant)
+local React = require("@pkg/@jsdotlua/react")
+local invariant = require("../../utils/invariant")
 
 --[[
 	Render a scene as a card for use in a StackView. This component is

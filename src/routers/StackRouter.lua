@@ -1,29 +1,26 @@
 -- upstream https://github.com/react-navigation/react-navigation/blob/6390aacd07fd647d925dfec842a766c8aad5272f/packages/core/src/routers/StackRouter.js
 
-local root = script.Parent.Parent
-local Packages = root.Parent
-
-local LuauPolyfill = require(Packages.LuauPolyfill)
+local LuauPolyfill = require("@pkg/@jsdotlua/luau-polyfill")
 local Array = LuauPolyfill.Array
 local Object = LuauPolyfill.Object
 
-local NavigationActions = require(root.NavigationActions)
-local StackActions = require(script.Parent.StackActions)
-local KeyGenerator = require(root.utils.KeyGenerator)
-local StateUtils = require(root.StateUtils)
-local getScreenForRouteName = require(script.Parent.getScreenForRouteName)
-local createConfigGetter = require(script.Parent.createConfigGetter)
-local validateRouteConfigArray = require(script.Parent.validateRouteConfigArray)
-local validateRouteConfigMap = require(script.Parent.validateRouteConfigMap)
-local invariant = require(root.utils.invariant)
-local pathUtils = require(script.Parent.pathUtils)
+local NavigationActions = require("../NavigationActions")
+local StackActions = require("./StackActions")
+local KeyGenerator = require("../utils/KeyGenerator")
+local StateUtils = require("../StateUtils")
+local getScreenForRouteName = require("./getScreenForRouteName")
+local createConfigGetter = require("./createConfigGetter")
+local validateRouteConfigArray = require("./validateRouteConfigArray")
+local validateRouteConfigMap = require("./validateRouteConfigMap")
+local invariant = require("../utils/invariant")
+local pathUtils = require("./pathUtils")
 local createPathParser = pathUtils.createPathParser
 
 local STACK_ROUTER_ROOT_KEY = "StackRouterRoot"
 -- This symbol is used to differentiate if a router has a child router
 -- or if is a regular Roact component. React-navigation does it by using
 -- undefined vs. null, so we use this symbol to represent the `null` routers.
-local CHILD_IS_SCREEN = require(script.Parent["ChildIsScreenRouterSymbol.roblox"])
+local CHILD_IS_SCREEN = require("./ChildIsScreenRouterSymbol.roblox.lua")
 
 local defaultActionCreators = function()
 	return {}

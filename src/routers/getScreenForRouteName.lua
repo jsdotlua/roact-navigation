@@ -1,11 +1,9 @@
 -- upstream https://github.com/react-navigation/react-navigation/blob/62da341b672a83786b9c3a80c8a38f929964d7cc/packages/core/src/routers/SwitchRouter.js
-local root = script.Parent.Parent
-local Packages = root.Parent
-local LuauPolyfill = require(Packages.LuauPolyfill)
+local LuauPolyfill = require("@pkg/@jsdotlua/luau-polyfill")
 local Array = LuauPolyfill.Array
 local Object = LuauPolyfill.Object
-local invariant = require(root.utils.invariant)
-local isValidScreenComponent = require(root.utils.isValidScreenComponent)
+local invariant = require("../utils/invariant")
+local isValidScreenComponent = require("../utils/isValidScreenComponent")
 
 -- Extract a single screen Roact component/navigator from
 -- a navigator's config.

@@ -1,4 +1,4 @@
-local invariant = require(script.Parent.invariant)
+local invariant = require("./invariant")
 
 local PageNavigationEvent = {}
 PageNavigationEvent.__index = PageNavigationEvent

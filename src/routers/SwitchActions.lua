@@ -1,8 +1,6 @@
-local root = script.Parent.Parent
-local Packages = root.Parent
-local LuauPolyfill = require(Packages.LuauPolyfill)
+local LuauPolyfill = require("@pkg/@jsdotlua/luau-polyfill")
 local Object = LuauPolyfill.Object
-local NavigationSymbol = require(script.Parent.Parent.NavigationSymbol)
+local NavigationSymbol = require("../NavigationSymbol")
 
 local JUMP_TO_TOKEN = NavigationSymbol("JUMP_TO")
 

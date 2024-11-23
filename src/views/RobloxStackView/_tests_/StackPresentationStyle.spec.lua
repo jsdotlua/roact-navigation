@@ -1,17 +1,20 @@
-return function()
-	local StackPresentationStyle = require(script.Parent.Parent.StackPresentationStyle)
+local JestGlobals = require("@pkg/@jsdotlua/jest-globals")
+local expect = JestGlobals.expect
+local it = JestGlobals.it
+local describe = JestGlobals.describe
 
-	describe("StackPresentationStyle token tests", function()
-		it("should return same object for each token for multiple calls", function()
-			expect(StackPresentationStyle.Default).to.equal(StackPresentationStyle.Default)
-			expect(StackPresentationStyle.Modal).to.equal(StackPresentationStyle.Modal)
-			expect(StackPresentationStyle.Overlay).to.equal(StackPresentationStyle.Overlay)
-		end)
+local StackPresentationStyle = require("../StackPresentationStyle")
 
-		it("should return matching string names for symbols", function()
-			expect(tostring(StackPresentationStyle.Default)).to.equal("DEFAULT")
-			expect(tostring(StackPresentationStyle.Modal)).to.equal("MODAL")
-			expect(tostring(StackPresentationStyle.Overlay)).to.equal("OVERLAY")
-		end)
+describe("StackPresentationStyle token tests", function()
+	it("should return same object for each token for multiple calls", function()
+		expect(StackPresentationStyle.Default).toBe(StackPresentationStyle.Default)
+		expect(StackPresentationStyle.Modal).toBe(StackPresentationStyle.Modal)
+		expect(StackPresentationStyle.Overlay).toBe(StackPresentationStyle.Overlay)
 	end)
-end
+
+	it("should return matching string names for symbols", function()
+		expect(tostring(StackPresentationStyle.Default)).toBe("DEFAULT")
+		expect(tostring(StackPresentationStyle.Modal)).toBe("MODAL")
+		expect(tostring(StackPresentationStyle.Overlay)).toBe("OVERLAY")
+	end)
+end)

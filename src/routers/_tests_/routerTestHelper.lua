@@ -1,12 +1,10 @@
 -- upstream https://github.com/react-navigation/react-navigation/blob/fcd7d83c4c33ad1fa508c8cfe687d2fa259bfc2c/packages/core/src/routers/__tests__/routerTestHelper.js
 
-local Root = script.Parent.Parent.Parent
-local Packages = Root.Parent
-local LuauPolyfill = require(Packages.LuauPolyfill)
+local LuauPolyfill = require("@pkg/@jsdotlua/luau-polyfill")
 local Object = LuauPolyfill.Object
-local StackActions = require(Root.routers.StackActions)
-local SwitchActions = require(Root.routers.SwitchActions)
-local NavigationActions = require(Root.NavigationActions)
+local StackActions = require("../../routers/StackActions")
+local SwitchActions = require("../../routers/SwitchActions")
+local NavigationActions = require("../../NavigationActions")
 
 local defaultOptions = { skipInitializeState = false }
 

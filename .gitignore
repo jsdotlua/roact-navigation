@@ -9,6 +9,16 @@
 /*.sig
 /rotriever.lock
 
+/temp
+/node_modules
+/build
+
+.yarn
+
+/globalTypes.d.lua
+
+**/sourcemap.json
+
 .DS_Store
 .vscode
 .idea

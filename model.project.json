@@ -1,0 +1,9 @@
+{
+  "name": "RoactNavigation",
+  "tree": {
+    "$path": "src",
+    "node_modules": {
+      "$path": "node_modules"
+    }
+  }
+}

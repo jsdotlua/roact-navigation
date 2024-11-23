@@ -1,5 +1,5 @@
-local NavigationActions = require(script.Parent.Parent.NavigationActions)
-local invariant = require(script.Parent.Parent.utils.invariant)
+local NavigationActions = require("../NavigationActions")
+local invariant = require("../utils/invariant")
 
 return function(route)
 	local result = {}

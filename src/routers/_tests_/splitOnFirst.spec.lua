@@ -1,17 +1,15 @@
 -- upstream: https://github.com/sindresorhus/split-on-first/blob/v1.1.0/test.js
-return function()
-	local routersModule = script.Parent.Parent
-	local RoactNavigationModule = routersModule.Parent
-	local Packages = RoactNavigationModule.Parent
-	local jestExpect = require(Packages.Dev.JestGlobals).expect
 
-	local splitOnFirst = require(routersModule.splitOnFirst)
+local JestGlobals = require("@pkg/@jsdotlua/jest-globals")
+local expect = JestGlobals.expect
+local it = JestGlobals.it
 
-	it("main", function()
-		jestExpect(splitOnFirst("a-b-c", "-")).toEqual({ "a", "b-c" })
-		jestExpect(splitOnFirst("key:value:value2", ":")).toEqual({ "key", "value:value2" })
-		jestExpect(splitOnFirst("a---b---c", "---")).toEqual({ "a", "b---c" })
-		jestExpect(splitOnFirst("a-b-c", "+")).toEqual({ "a-b-c" })
-		jestExpect(splitOnFirst("abc", "")).toEqual({ "abc" })
-	end)
-end
+local splitOnFirst = require("../splitOnFirst")
+
+it("main", function()
+	expect(splitOnFirst("a-b-c", "-")).toEqual({ "a", "b-c" })
+	expect(splitOnFirst("key:value:value2", ":")).toEqual({ "key", "value:value2" })
+	expect(splitOnFirst("a---b---c", "---")).toEqual({ "a", "b---c" })
+	expect(splitOnFirst("a-b-c", "+")).toEqual({ "a-b-c" })
+	expect(splitOnFirst("abc", "")).toEqual({ "abc" })
+end)

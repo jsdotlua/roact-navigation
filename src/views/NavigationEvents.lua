@@ -1,9 +1,7 @@
 -- upstream https://github.com/react-navigation/react-navigation/blob/6390aacd07fd647d925dfec842a766c8aad5272f/packages/core/src/views/NavigationEvents.js
-local root = script.Parent.Parent
-local Packages = root.Parent
-local React = require(Packages.React)
-local withNavigation = require(script.Parent.withNavigation)
-local Events = require(root.Events)
+local React = require("@pkg/@jsdotlua/react")
+local withNavigation = require("./withNavigation")
+local Events = require("../Events")
 
 --[[
 	NavigationEvents providers a wrapper component that allows you to subscribe

@@ -1,13 +1,11 @@
 -- upstream https://github.com/react-navigation/react-navigation/blob/9b55493e7662f4d54c21f75e53eb3911675f61bc/packages/core/src/navigators/createNavigator.js
 
-local root = script.Parent.Parent
-local Packages = root.Parent
-local React = require(Packages.React)
-local LuauPolyfill = require(Packages.LuauPolyfill)
+local React = require("@pkg/@jsdotlua/react")
+local LuauPolyfill = require("@pkg/@jsdotlua/luau-polyfill")
 local Object = LuauPolyfill.Object
 local Array = LuauPolyfill.Array
-local invariant = require(root.utils.invariant)
-local NavigationFocusEvents = require(root.views.NavigationFocusEvents)
+local invariant = require("../utils/invariant")
+local NavigationFocusEvents = require("../views/NavigationFocusEvents")
 
 return function(navigatorViewComponent, router, navigationConfig)
 	local Navigator = React.Component:extend("Navigator")

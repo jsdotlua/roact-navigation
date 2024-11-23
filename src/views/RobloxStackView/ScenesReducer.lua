@@ -1,10 +1,8 @@
-local root = script.Parent.Parent.Parent
-local Packages = root.Parent
-local LuauPolyfill = require(Packages.LuauPolyfill)
+local LuauPolyfill = require("@pkg/@jsdotlua/luau-polyfill")
 local Array = LuauPolyfill.Array
 local Object = LuauPolyfill.Object
-local TableUtilities = require(root.utils.TableUtilities)
-local invariant = require(root.utils.invariant)
+local TableUtilities = require("../../utils/TableUtilities")
+local invariant = require("../../utils/invariant")
 
 local SCENE_KEY_PREFIX = "scene_"
 

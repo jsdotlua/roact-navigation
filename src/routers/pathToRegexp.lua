@@ -24,11 +24,9 @@ THE SOFTWARE.
 ]]
 
 --!nolint LocalShadow
-local root = script.Parent.Parent
-local Packages = root.Parent
-local LuauPolyfill = require(Packages.LuauPolyfill)
+local LuauPolyfill = require("@pkg/@jsdotlua/luau-polyfill")
 local Array = LuauPolyfill.Array
-local RegExp = require(Packages.RegExp)
+local RegExp = require("@pkg/luau-regexp")
 
 type Record<T, U> = { [T]: U }
 

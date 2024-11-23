@@ -1,6 +1,6 @@
 -- upstream https://github.com/react-navigation/react-navigation/blob/62da341b672a83786b9c3a80c8a38f929964d7cc/packages/core/src/NavigationActions.ts
 
-local NavigationSymbol = require(script.Parent.NavigationSymbol)
+local NavigationSymbol = require("./NavigationSymbol")
 
 local BACK_TOKEN = NavigationSymbol("BACK")
 local INIT_TOKEN = NavigationSymbol("INIT")

@@ -1,10 +1,8 @@
 -- upstream https://github.com/react-navigation/react-navigation/blob/62da341b672a83786b9c3a80c8a38f929964d7cc/packages/core/src/routers/StackActions.js
 
-local root = script.Parent.Parent
-local Packages = root.Parent
-local LuauPolyfill = require(Packages.LuauPolyfill)
+local LuauPolyfill = require("@pkg/@jsdotlua/luau-polyfill")
 local Object = LuauPolyfill.Object
-local NavigationSymbol = require(root.NavigationSymbol)
+local NavigationSymbol = require("../NavigationSymbol")
 
 local POP_TOKEN = NavigationSymbol("POP")
 local POP_TO_TOP_TOKEN = NavigationSymbol("POP_TO_TOP")

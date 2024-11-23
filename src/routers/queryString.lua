@@ -13,17 +13,13 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 local HttpService = game:GetService("HttpService")
 
-local routersModule = script.Parent
-local RoactNavigationModule = routersModule.Parent
-local Packages = RoactNavigationModule.Parent
-
-local LuauPolyfill = require(Packages.LuauPolyfill)
+local LuauPolyfill = require("@pkg/@jsdotlua/luau-polyfill")
 local Array = LuauPolyfill.Array
 local Boolean = LuauPolyfill.Boolean
 local Object = LuauPolyfill.Object
 local String = LuauPolyfill.String
 local Number = LuauPolyfill.Number
-local RegExp = require(Packages.RegExp)
+local RegExp = require("@pkg/luau-regexp")
 
 local function TypeError(message)
 	return message
@@ -39,8 +35,8 @@ local function strictUriEncode(value: string): string
 	end)
 end
 
-local decodeComponent = require(routersModule.decodeURIComponent)
-local splitOnFirst = require(routersModule.splitOnFirst)
+local decodeComponent = require("./decodeURIComponent")
+local splitOnFirst = require("./splitOnFirst")
 
 -- deviation: pre-declare function declarations
 local encode

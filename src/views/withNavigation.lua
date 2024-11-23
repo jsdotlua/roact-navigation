@@ -1,12 +1,9 @@
 -- upstream https://github.com/react-navigation/react-navigation/blob/20e2625f351f90fadadbf98890270e43e744225b/packages/core/src/views/withNavigation.js
-local views = script.Parent
-local root = views.Parent
-local Packages = root.Parent
-local LuauPolyfill = require(Packages.LuauPolyfill)
+local LuauPolyfill = require("@pkg/@jsdotlua/luau-polyfill")
 local Object = LuauPolyfill.Object
-local React = require(Packages.React)
-local NavigationContext = require(views.NavigationContext)
-local invariant = require(root.utils.invariant)
+local React = require("@pkg/@jsdotlua/react")
+local NavigationContext = require("./NavigationContext")
+local invariant = require("../utils/invariant")
 
 local function isComponent(component)
 	local valueType = type(component)

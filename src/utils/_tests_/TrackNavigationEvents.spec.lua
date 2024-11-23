@@ -1,36 +1,37 @@
-local RoactNavigation = require(script.Parent.Parent.Parent)
-local TrackNavigationEvents = require(script.Parent.Parent.TrackNavigationEvents)
-local PageNavigationEvent = require(script.Parent.Parent.PageNavigationEvent)
+local JestGlobals = require("@pkg/@jsdotlua/jest-globals")
+local expect = JestGlobals.expect
+local it = JestGlobals.it
 
-return function()
-	local testPage = "TEST PAGE"
-	local testPageWillFocus = PageNavigationEvent.new(testPage, RoactNavigation.Events.WillFocus)
-	local testPageWillBlur = PageNavigationEvent.new(testPage, RoactNavigation.Events.WillBlur)
+local RoactNavigation = require("../..")
+local TrackNavigationEvents = require("../TrackNavigationEvents")
+local PageNavigationEvent = require("../PageNavigationEvent")
 
-	local trackNavigationEvents = TrackNavigationEvents.new()
-	it("should implement equalTo function", function()
-		expect(trackNavigationEvents:equalTo({})).to.be.equal(true)
+local testPage = "TEST PAGE"
+local testPageWillFocus = PageNavigationEvent.new(testPage, RoactNavigation.Events.WillFocus)
+local testPageWillBlur = PageNavigationEvent.new(testPage, RoactNavigation.Events.WillBlur)
 
-		local navigationEvents = trackNavigationEvents:getNavigationEvents()
-		table.insert(navigationEvents, testPageWillFocus)
-		expect(trackNavigationEvents:equalTo({ testPageWillFocus })).to.be.equal(true)
-		expect(trackNavigationEvents:equalTo({})).to.be.equal(false)
+local trackNavigationEvents = TrackNavigationEvents.new()
 
-		table.insert(navigationEvents, testPageWillBlur)
-		expect(trackNavigationEvents:equalTo({ testPageWillFocus, testPageWillBlur })).to.be.equal(true)
+it("should implement equalTo function", function()
+	expect(trackNavigationEvents:equalTo({})).toBe(true)
 
-		table.insert(navigationEvents, testPageWillFocus)
-		expect(trackNavigationEvents:equalTo({ testPageWillFocus, testPageWillBlur })).to.be.equal(false)
-		expect(trackNavigationEvents:equalTo({ testPageWillFocus, testPageWillBlur, testPageWillFocus })).to.be.equal(
-			true
-		)
-	end)
+	local navigationEvents = trackNavigationEvents:getNavigationEvents()
+	table.insert(navigationEvents, testPageWillFocus)
+	expect(trackNavigationEvents:equalTo({ testPageWillFocus })).toBe(true)
+	expect((trackNavigationEvents:equalTo({}))).toBe(false)
 
-	it("should be empty after reset", function()
-		trackNavigationEvents:resetNavigationEvents()
-		local navigationEvents = trackNavigationEvents:getNavigationEvents()
-		expect(type(navigationEvents)).to.be.equal("table")
-		expect(#navigationEvents).to.be.equal(0)
-		expect(trackNavigationEvents:equalTo({})).to.be.equal(true)
-	end)
-end
+	table.insert(navigationEvents, testPageWillBlur)
+	expect(trackNavigationEvents:equalTo({ testPageWillFocus, testPageWillBlur })).toBe(true)
+
+	table.insert(navigationEvents, testPageWillFocus)
+	expect((trackNavigationEvents:equalTo({ testPageWillFocus, testPageWillBlur }))).toBe(false)
+	expect(trackNavigationEvents:equalTo({ testPageWillFocus, testPageWillBlur, testPageWillFocus })).toBe(true)
+end)
+
+it("should be empty after reset", function()
+	trackNavigationEvents:resetNavigationEvents()
+	local navigationEvents = trackNavigationEvents:getNavigationEvents()
+	expect(type(navigationEvents)).toBe("table")
+	expect(#navigationEvents).toBe(0)
+	expect(trackNavigationEvents:equalTo({})).toBe(true)
+end)
