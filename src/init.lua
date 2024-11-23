@@ -14,6 +14,7 @@ return {
 
 	withNavigation = require("./views/withNavigation"),
 	withNavigationFocus = require("./views/withNavigationFocus"),
+	useNavigation = require("./views/useNavigation"),
 
 	-- Navigators
 	createRobloxStackNavigator = require("./navigators/createRobloxStackNavigator"),
