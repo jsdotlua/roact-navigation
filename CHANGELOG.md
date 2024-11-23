@@ -7,6 +7,7 @@ Work in progress, to be added to next release notes.
 
 ### v0.5.10
 
+* Added `useNavigation` hook to the module's export ([#2](https://github.com/jsdotlua/roact-navigation/pull/2))
 * Added "non-transparent, see-through card" support to RobloxStackView ([#148](https://github.com/Roblox/roact-navigation-internal/pull/148))
 
 ### v0.5.9
