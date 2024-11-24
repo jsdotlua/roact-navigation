@@ -120,12 +120,12 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - artifact-name: react-testing-library.rbxm
-            path: build/react-testing-library.rbxm
+          - artifact-name: roact-navigation.rbxm
+            path: build/roact-navigation.rbxm
             asset-type: application/octet-stream
 
-          - artifact-name: react-testing-library-dev.rbxm
-            path: build/debug/react-testing-library.rbxm
+          - artifact-name: roact-navigation-dev.rbxm
+            path: build/debug/roact-navigation.rbxm
             asset-type: application/octet-stream
     steps:
       - uses: actions/checkout@v4

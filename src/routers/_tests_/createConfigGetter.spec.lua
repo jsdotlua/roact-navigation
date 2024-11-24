@@ -4,8 +4,6 @@ local React = require("@pkg/@jsdotlua/react")
 local JestGlobals = require("@pkg/@jsdotlua/jest-globals")
 local expect = JestGlobals.expect
 local it = JestGlobals.it
-local describe = JestGlobals.describe
-local beforeEach = JestGlobals.beforeEach
 
 local createConfigGetter = require("../createConfigGetter")
 
