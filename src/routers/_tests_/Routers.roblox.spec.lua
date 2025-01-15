@@ -75,13 +75,17 @@ for routerName, Router in pairs(ROUTERS) do
 
 		it("removes params with RoactNavigation.None when navigating to the same route", function()
 			initState = router.getStateForAction(NavigationActions.init({
-				params = { a = 1 }
+				params = { a = 1 },
 			}))
 			initRoute = initState.routes[initState.index]
 			expect(initState.routes[initState.index].params).toEqual(expect.objectContaining({ a = 1 }))
 
 			local state0 = router.getStateForAction(
-				NavigationActions.navigate({ params = RoactNavigation.None, routeName = initRoute.routeName, key = initRoute.key }),
+				NavigationActions.navigate({
+					params = RoactNavigation.None,
+					routeName = initRoute.routeName,
+					key = initRoute.key,
+				}),
 				initState
 			)
 
@@ -90,7 +94,11 @@ for routerName, Router in pairs(ROUTERS) do
 
 		it("does not leave a specific param to RoactNavigation.None when navigating to the same route", function()
 			local state0 = router.getStateForAction(
-				NavigationActions.navigate({ params = { a = RoactNavigation.None }, routeName = initRoute.routeName, key = initRoute.key }),
+				NavigationActions.navigate({
+					params = { a = RoactNavigation.None },
+					routeName = initRoute.routeName,
+					key = initRoute.key,
+				}),
 				initState
 			)
 
@@ -99,12 +107,16 @@ for routerName, Router in pairs(ROUTERS) do
 
 		it("removes a specific param with RoactNavigation.None when navigating to the same route", function()
 			initState = router.getStateForAction(NavigationActions.init({
-				params = { a = 1, b = 2 }
+				params = { a = 1, b = 2 },
 			}))
 			initRoute = initState.routes[initState.index]
 
 			local state0 = router.getStateForAction(
-				NavigationActions.navigate({ params = { a = RoactNavigation.None }, routeName = initRoute.routeName, key = initRoute.key }),
+				NavigationActions.navigate({
+					params = { a = RoactNavigation.None },
+					routeName = initRoute.routeName,
+					key = initRoute.key,
+				}),
 				initState
 			)
 
