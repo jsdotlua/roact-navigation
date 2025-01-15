@@ -295,7 +295,7 @@ return function(routeArray, config)
 							then Object.None
 							else if newChildState.params
 								then Object.assign(table.clone(newChildState.params), action.params)
-								else table.clone(action.params),
+								else Object.assign({}, action.params),
 					})
 				end
 
@@ -327,7 +327,7 @@ return function(routeArray, config)
 					params = if lastRoute.params and action.params
 						then Object.assign(table.clone(lastRoute.params), action.params)
 						elseif lastRoute.params then table.clone(lastRoute.params)
-						elseif action.params then table.clone(action.params)
+						elseif action.params then Object.assign({}, action.params)
 						else {}
 				end
 				local routes = table.clone(state.routes)
