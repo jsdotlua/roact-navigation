@@ -5,6 +5,8 @@ ___
 
 Work in progress, to be added to next release notes.
 
+* Fixed RoactNavigation.None present in params when navigating ([#3](https://github.com/jsdotlua/roact-navigation/pull/3))
+
 ### v0.5.10
 
 * Added `useNavigation` hook to the module's export ([#2](https://github.com/jsdotlua/roact-navigation/pull/2))
